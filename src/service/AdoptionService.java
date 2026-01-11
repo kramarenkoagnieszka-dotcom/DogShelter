@@ -19,9 +19,28 @@ public class AdoptionService {
 
     public void addApplication(int id, Dog dog, Adopter adopter, String notes) {
         double match = matchingService.calculateMatchPercentage(dog, adopter);
-        AdoptionApplication app = new AdoptionApplication((int) id, dog, adopter, match, notes);
+
+        if (match < 50.0) {
+            throw new IllegalStateException("Application rejected: Match percentage is too low (" + match + "%) or critical requirements not met.");
+        }
+
+        if (applications.stream().anyMatch(app -> app.getId() == id)) {
+            throw new IllegalArgumentException("Application with ID " + id + " already exists.");
+        }
+
+        AdoptionApplication app = new AdoptionApplication(id, dog, adopter, match, notes);
         applications.add(app);
     }
+
+    public void changeStatus(long id, AdoptionApplication.ApplicationStatus newStatus) {
+        AdoptionApplication application = applications.stream()
+                .filter(app -> app.getId() == id)
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Application with ID " + id + " not found."));
+
+        application.setStatus(newStatus);
+    }
+
     public Optional<AdoptionApplication> findApplicationById(long id) {
         cleanOldApplications();
         return applications.stream()
@@ -39,13 +58,6 @@ public class AdoptionService {
     public List<AdoptionApplication> getAllApplications() {
         cleanOldApplications();
         return new ArrayList<>(applications);
-    }
-
-    public void changeStatus(long id, AdoptionApplication.ApplicationStatus newStatus) {
-        applications.stream()
-                .filter(app -> app.getId() == id)
-                .findFirst()
-                .ifPresent(app -> app.setStatus(newStatus));
     }
 
     public void cleanOldApplications() {
