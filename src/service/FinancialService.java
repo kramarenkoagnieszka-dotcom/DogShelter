@@ -40,7 +40,7 @@ public class FinancialService {
             if (user instanceof Donor donor) {
                 donor.addDonation(donation);
             } else {
-                throw new IllegalArgumentException("User with ID " + donation.getDonorId() + " is not an Adopter.");
+                throw new IllegalArgumentException("User with ID " + donation.getDonorId() + " is not a Donor.");
             }
         });
     }

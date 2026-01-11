@@ -1,5 +1,5 @@
 package model;
-
+// dodać toString
 public class DogProfile {
     private final int energyLevel;
     private final boolean needsGarden;
@@ -19,6 +19,26 @@ public class DogProfile {
         this.goodWithKids = goodWithKids;
         this.specialMedicalNeeds = specialMedicalNeeds;
         this.specialBehavioralNeeds = specialBehavioralNeeds;
+    }
+    @Override
+    public String toString() {
+        return String.format(
+                "Profile Details:\n" +
+                        "  - Energy Level: %d/5\n" +
+                        "  - Needs Garden: %s\n" +
+                        "  - Good with Cats: %s\n" +
+                        "  - Good with Dogs: %s\n" +
+                        "  - Good with Kids: %s\n" +
+                        "  - Special Medical Needs: %s\n" +
+                        "  - Special Behavioral Needs: %s",
+                energyLevel,
+                needsGarden ? "YES" : "NO",
+                goodWithCats ? "YES" : "NO",
+                goodWithDogs ? "YES" : "NO",
+                goodWithKids ? "YES" : "NO",
+                specialMedicalNeeds ? "YES" : "NO",
+                specialBehavioralNeeds ? "YES" : "NO"
+        );
     }
 
     public int getEnergyLevel() { return energyLevel; }

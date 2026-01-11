@@ -37,9 +37,21 @@ public class Dog {
 
     public void addExpense(Expense expense) { this.expenseList.add(expense);}
 
-
     @Override
     public String toString() {
-        return "Dog{id=" + id + ", name='" + name + "', breed='" + breed + "', adopted=" + isAdopted + "}";
+        return String.format(
+                "Dog ID: %d\n" +
+                        "Name: %s\n" +
+                        "Breed: %s\n" +
+                        "Age: %d\n" +
+                        "Status: %s\n" +
+                        "%s",
+                id,
+                name,
+                breed,
+                age,
+                isAdopted ? "Adopted" : "Available",
+                profile != null ? profile.toString() : "No profile assigned."
+        );
     }
 }

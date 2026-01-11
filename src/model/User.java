@@ -1,5 +1,5 @@
 package model;
-// do userów dodać tostringi
+
 public abstract class User {
     private final int id;
     private final String username;

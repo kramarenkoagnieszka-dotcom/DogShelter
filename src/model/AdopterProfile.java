@@ -29,6 +29,32 @@ public class AdopterProfile {
         this.hasBehavioralKnowledge = hasBehavioralKnowledge;
         this.willingForBehavioralIssues = willingForBehavioralIssues;
     }
+    @Override
+    public String toString() {
+        return String.format(
+                "Adopter Profile Details:\n" +
+                        "  - Activity Level: %d/5\n" +
+                        "  - Has Garden: %s\n" +
+                        "  - Has Cats: %s\n" +
+                        "  - Has Dogs: %s\n" +
+                        "  - Has Kids: %s\n" +
+                        "  - Monthly Budget: %.2f\n" +
+                        "  - Willing for Disabled Dog: %s\n" +
+                        "  - Had Dog Before: %s\n" +
+                        "  - Behavioral Knowledge: %s\n" +
+                        "  - Willing for Behavioral Issues: %s",
+                energyLevel,
+                hasGarden ? "YES" : "NO",
+                hasCats ? "YES" : "NO",
+                hasDogs ? "YES" : "NO",
+                hasKids ? "YES" : "NO",
+                monthlyBudget,
+                willingForDisabledDog ? "YES" : "NO",
+                hadDogBefore ? "YES" : "NO",
+                hasBehavioralKnowledge ? "YES" : "NO",
+                willingForBehavioralIssues ? "YES" : "NO"
+        );
+    }
 
     public int getEnergyLevel() { return energyLevel; }
     public boolean isHasGarden() { return hasGarden; }
