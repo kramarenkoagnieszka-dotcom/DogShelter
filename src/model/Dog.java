@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Dog {
     private final int id;
     private String name;
@@ -7,6 +10,7 @@ public class Dog {
     private String breed;
     private boolean isAdopted;
     private DogProfile profile;
+    private List<Expense> expenseList;
 
     public Dog(int id, String name, int age, String breed, DogProfile profile) {
         this.id = id;
@@ -15,6 +19,7 @@ public class Dog {
         this.breed = breed;
         this.profile = profile;
         this.isAdopted = false;
+        expenseList = new ArrayList<>();
     }
 
     public int getId() { return id; }
@@ -28,6 +33,10 @@ public class Dog {
     public void setAdopted(boolean adopted) { isAdopted = adopted; }
     public DogProfile getProfile() { return profile; }
     public void setProfile(DogProfile profile) { this.profile = profile; }
+    public List<Expense> getExpenses() { return expenseList; }
+
+    public void addExpense(Expense expense) { this.expenseList.add(expense);}
+
 
     @Override
     public String toString() {
