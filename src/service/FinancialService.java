@@ -1,5 +1,6 @@
 package service;
 
+import model.Donor;
 import model.Expense;
 import model.Donation;
 import java.util.ArrayList;
@@ -11,10 +12,11 @@ public class FinancialService {
     private List<Donation> donations = new ArrayList<>();
     private double balance = 0;
     private final Shelter shelter;
-    //UserService userService
+    private final UserService userService;
 
-    public FinancialService(Shelter shelter) {
+    public FinancialService(Shelter shelter, UserService userService) {
         this.shelter = shelter;
+        this.userService = userService;
     }
 
     public void addExpense(Expense expense) throws IllegalArgumentException {
@@ -34,14 +36,13 @@ public class FinancialService {
         donations.add(donation);
         balance += donation.getAmount();
 
-        /*
-        Dodanie do historii darowizn konkretnego darczyńcy
-
-        userService.findDonorById(expense.getDonorId()).ifPresent(donor -> {
-            donor.getExpenses().add(expense);
+        userService.findUserById(donation.getDonorId()).ifPresent(user -> {
+            if (user instanceof Donor donor) {
+                donor.addDonation(donation);
+            } else {
+                throw new IllegalArgumentException("User with ID " + donation.getDonorId() + " is not an Adopter.");
+            }
         });
-
-         */
     }
 
     public double getBalance() {
