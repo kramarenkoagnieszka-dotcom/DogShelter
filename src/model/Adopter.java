@@ -18,4 +18,9 @@ public class Adopter extends User {
         this.profile = profile;
         this.donationHistory = new ArrayList<>();
     }
+
+    public AdopterProfile getProfile() { return profile; }
+    public List<Donation> getDonationHistory() { return donationHistory; }
+
+    public void setProfile(AdopterProfile profile) { this.profile = profile; }
 }
