@@ -1,5 +1,5 @@
 package model;
-
+// do userów dodać tostringi
 public abstract class User {
     private final int id;
     private final String username;
@@ -17,6 +17,13 @@ public abstract class User {
         this.email = email;
     }
 
+    @Override
+    public String toString() {
+        return String.format(
+                "[%s] ID: %d | Username: %s | Name: %s %s | Email: %s",
+                this.getClass().getSimpleName(), id, username, firstName, lastName, email
+        );
+    }
 
     public int getId() { return id; }
     public String getUsername() { return username; }
