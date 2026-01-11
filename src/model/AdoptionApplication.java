@@ -3,7 +3,7 @@ package model;
 import java.time.LocalDateTime;
 
 public class AdoptionApplication {
-    private Long id;
+    private int id;
     private Dog dog;
     private Adopter adopter;
     private LocalDateTime applicationDate;
@@ -11,7 +11,7 @@ public class AdoptionApplication {
     private double matchPercentage;
     private String notes;
 
-    public AdoptionApplication(Long id, Dog dog, Adopter adopter, double matchPercentage, String notes) {
+    public AdoptionApplication(int id, Dog dog, Adopter adopter, double matchPercentage, String notes) {
         this.id = id;
         this.dog = dog;
         this.adopter = adopter;
@@ -26,7 +26,7 @@ public class AdoptionApplication {
         ACCEPTED,
         REJECTED
     }
-    public Long getId() { return id; }
+    public int getId() { return id; }
     public Dog getDog() { return dog; }
     public Adopter getAdopter() { return adopter; }
     public LocalDateTime getApplicationDate() { return applicationDate; }
