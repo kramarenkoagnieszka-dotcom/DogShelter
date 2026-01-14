@@ -2,6 +2,7 @@
 import model.*;
 import service.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -117,8 +118,11 @@ public class Main {
     private static void handleAddNewUser() {
         try {
             System.out.println("\n--- REGISTER NEW USER ---");
-            System.out.print("Enter ID: ");
-            int id = Integer.parseInt(scanner.nextLine());
+
+            int nextId = userService.getAllUsers().stream()
+                    .mapToInt(User::getId)
+                    .max()
+                    .orElse(100) + 1;
 
             System.out.print("Role (1: Staff, 2: Adopter, 3: Donor, 4: Admin): ");
             String roleChoice = scanner.nextLine();
@@ -130,18 +134,16 @@ public class Main {
             System.out.print("Email: "); String em = scanner.nextLine();
 
             User newUser = switch (roleChoice) {
-                case "1" -> new Staff(id, fn, ln, un, pw, em);
-                case "2" -> new Adopter(id, fn, ln, un, pw, em);
-                case "3" -> new Donor(id, fn, ln, un, pw, em);
-                case "4" -> new Admin(id, fn, ln, un, pw, em);
+                case "1" -> new Staff(nextId, fn, ln, un, pw, em);
+                case "2" -> new Adopter(nextId, fn, ln, un, pw, em);
+                case "3" -> new Donor(nextId, fn, ln, un, pw, em);
+                case "4" -> new Admin(nextId, fn, ln, un, pw, em);
                 default -> throw new IllegalArgumentException("Invalid role selected.");
             };
 
             userService.addUser(newUser);
-            System.out.println("User added successfully.");
+            System.out.println("User registered successfully with ID: " + nextId);
 
-        } catch (NumberFormatException e) {
-            System.out.println("Error: ID must be a number.");
         } catch (IllegalArgumentException | IllegalStateException e) {
             System.out.println("Registration failed: " + e.getMessage());
         }
@@ -244,22 +246,143 @@ public class Main {
         scanner.nextLine();
     }
 
-
     private static boolean showStaffMenu(Staff staff) {
         System.out.println("""
-                
-                --- STAFF PANEL ---
-                1. Add New Dog
-                2. List All Dogs
-                3. Search Dogs
-                4. Add Shelter Expense
-                5. Logout
-                Choice:\s""");
+            
+            --- STAFF PANEL ---
+            1. Add New Dog
+            2. List All Dogs
+            3. Search Dogs
+            4. Add Shelter Expense
+            5. Logout
+            Choice:\s""");
         String choice = scanner.nextLine();
+
         if (choice.equals("5")) return false;
-        // staff logic
+
+        switch (choice) {
+            case "1" -> handleAddDog();
+            case "2" -> shelter.getDogs().forEach(System.out::println);
+            case "3" -> handleSearchDogs();
+            case "4" -> handleAddExpense(staff);
+            default -> System.out.println("Invalid choice.");
+        }
         return true;
     }
+    private static void handleAddDog() {
+        try {
+            System.out.println("\n--- ADD NEW DOG TO SHELTER ---");
+
+            int nextId = shelter.getDogs().stream()
+                    .mapToInt(Dog::getId)
+                    .max()
+                    .orElse(0) + 1;
+
+            System.out.print("Name: ");
+            String name = scanner.nextLine();
+            System.out.print("Breed: ");
+            String breed = scanner.nextLine();
+            System.out.print("Age: ");
+            int age = Integer.parseInt(scanner.nextLine());
+
+            System.out.println("\n--- CONFIGURE DOG PROFILE ---");
+            System.out.print("Energy Level (1-5): ");
+            int energy = Integer.parseInt(scanner.nextLine());
+
+            System.out.print("Needs Garden? (y/n): ");
+            boolean garden = scanner.nextLine().equalsIgnoreCase("y");
+
+            System.out.print("Good with Cats? (y/n): ");
+            boolean cats = scanner.nextLine().equalsIgnoreCase("y");
+
+            System.out.print("Good with Dogs? (y/n): ");
+            boolean dogs = scanner.nextLine().equalsIgnoreCase("y");
+
+            System.out.print("Good with Kids? (y/n): ");
+            boolean kids = scanner.nextLine().equalsIgnoreCase("y");
+
+            System.out.print("Special Medical Needs? (y/n): ");
+            boolean medical = scanner.nextLine().equalsIgnoreCase("y");
+
+            System.out.print("Special Behavioral Needs? (y/n): ");
+            boolean behavioral = scanner.nextLine().equalsIgnoreCase("y");
+
+            DogProfile profile = new DogProfile(energy, garden, cats, dogs, kids, medical, behavioral);
+
+            Dog newDog = new Dog(nextId, name, age, breed, profile);
+
+            shelter.addDog(newDog);
+            System.out.println("\nSuccess: Dog '" + name + "' added with ID: " + nextId);
+
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Age and Energy Level must be numbers.");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Shelter Error: " + e.getMessage());
+        }
+    }
+    private static void handleSearchDogs() {
+        System.out.print("Search by ID, Name or Breed: ");
+        String query = scanner.nextLine();
+
+        if (query.isBlank()) {
+            System.out.println("Search query cannot be empty.");
+            return;
+        }
+
+        List<Dog> foundDogs = shelter.searchDogs(query);
+
+        if (foundDogs.isEmpty()) {
+            System.out.println("No dogs found matching: " + query);
+        } else {
+            System.out.println("\n--- SEARCH RESULTS ---");
+            foundDogs.forEach(dog -> {
+                System.out.println(dog);
+                System.out.println("-----------------------");
+            });
+        }
+    }
+
+    private static void handleAddExpense(Staff staff) {
+        try {
+            System.out.println("\n--- RECORD SHELTER EXPENSE ---");
+
+            System.out.print("Enter Dog ID for this expense: ");
+            int dogId = Integer.parseInt(scanner.nextLine());
+
+            Dog dog = shelter.findDogById(dogId)
+                    .orElseThrow(() -> new IllegalArgumentException("Dog with ID " + dogId + " not found."));
+
+            System.out.print("Expense Amount: ");
+            double amount = Double.parseDouble(scanner.nextLine());
+
+            System.out.print("Description: ");
+            String description = scanner.nextLine();
+
+            int transactionId = financialService.getAllExpenses().size() + 5000; // Unikalne ID transakcji
+            java.time.LocalDate today = java.time.LocalDate.now();
+
+
+            Expense newExpense = new Expense(
+                    transactionId,
+                    amount,
+                    today,
+                    description,
+                    dog.getId(),
+                    staff.getId()
+            );
+
+            financialService.addExpense(newExpense);
+
+            System.out.println("Success: Expense recorded.");
+            System.out.printf("New balance: %.2f PLN\n", financialService.getBalance());
+
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Invalid number format for ID or amount.");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Operation failed: " + e.getMessage());
+        }
+    }
+
 
     private static boolean showAdopterMenu(Adopter adopter) {
         System.out.println("""

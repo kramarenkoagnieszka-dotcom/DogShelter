@@ -1,5 +1,5 @@
 package model;
-// dodać toString
+
 public class DogProfile {
     private final int energyLevel;
     private final boolean needsGarden;

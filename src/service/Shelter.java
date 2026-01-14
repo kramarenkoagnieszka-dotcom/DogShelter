@@ -27,6 +27,23 @@ public class Shelter {
                 .filter(dog -> dog.getId() == dogId)
                 .findFirst();
     }
+    public List<Dog> searchDogs(String query) {
+        List<Dog> results = new ArrayList<>();
+        String lowerQuery = query.toLowerCase();
+
+        try {
+            int id = Integer.parseInt(query);
+            findDogById(id).ifPresent(results::add);
+        } catch (NumberFormatException e) {}
+
+        dogs.stream()
+                .filter(d -> d.getName().toLowerCase().contains(lowerQuery) ||
+                        d.getBreed().toLowerCase().contains(lowerQuery))
+                .filter(d -> results.stream().noneMatch(r -> r.getId() == d.getId()))
+                .forEach(results::add);
+
+        return results;
+    }
 
     public List<Dog> getDogs() {
         return new ArrayList<>(dogs);
