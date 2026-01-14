@@ -41,7 +41,7 @@ public class AdoptionService {
         application.setStatus(newStatus);
     }
 
-    public Optional<AdoptionApplication> findApplicationById(long id) {
+    public Optional<AdoptionApplication> getApplicationById(long id) {
         cleanOldApplications();
         return applications.stream()
                 .filter(app -> app.getId() == id)
