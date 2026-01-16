@@ -11,7 +11,7 @@ The main objective of this project is to demonstrate proficiency in **Java Core*
 * **Exception Handling**: Building a robust system that gracefully handles invalid user input and file errors.
 * **Collection Framework**: Efficient use of `List`, `Map`, and `Set` to manage shelter resources and user databases.
 * **Software Architecture**: Organizing code into logical packages to maintain high readability and scalability.
-* **OOP Principles**: Practical application of Inheritance, Polymorphism, and Abstraction to model shelter hierarchy.
+* **OOP Principles**: Practical application of Inheritance, Polymorphism, and Abstraction to main.java.model shelter hierarchy.
 
 ## 🚀 Features (In Development)
 * **User Management**: Different roles (Admin, Staff, Adopter, Donor) with specific permissions.
@@ -22,9 +22,9 @@ The main objective of this project is to demonstrate proficiency in **Java Core*
 
 ## 🏗️ Project Structure
 The project follows a modular package structure:
-* `pl.schronisko.model` - Data objects and entities.
-* `pl.schronisko.service` - Business logic and shelter management.
-* `pl.schronisko.persistence` - File handling and data storage.
+* `pl.schronisko.main.java.model` - Data objects and entities.
+* `pl.schronisko.main.java.service` - Business logic and shelter management.
+* `pl.schronisko.main.java.persistence` - File handling and data storage.
 
 ## 🛠️ Technologies
 * **Language:** Java 21
