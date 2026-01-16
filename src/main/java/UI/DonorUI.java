@@ -1,6 +1,5 @@
 package UI;
 
-import model.Donation;
 import model.Donor;
 import service.FinancialService;
 import service.Shelter;
@@ -45,24 +44,17 @@ public class DonorUI extends BaseUI {
             System.out.print("Enter amount: ");
             double amount = Double.parseDouble(scanner.nextLine());
 
-            if (amount <= 0) {
-                System.out.println("Amount must be greater than 0.");
-                return;
-            }
-
-            int transactionId = financialService.getAllDonations().size() + 8000;
-            java.time.LocalDate today = java.time.LocalDate.now();
-
-            Donation donation = new Donation(transactionId, amount, today, donor.getId());
-            financialService.addDonation(donation);
+            financialService.registerDonation(donor, amount);
 
             System.out.println("Thank you for your donation of " + amount + " EUR!");
-            System.out.println("Transaction ID: " + transactionId);
+            System.out.println("Your contribution helps us take better care of our dogs.");
 
         } catch (NumberFormatException e) {
-            System.out.println("Error: Invalid amount format.");
-        } catch (Exception e) {
+            System.out.println("Error: Invalid amount format. Please enter a number.");
+        } catch (IllegalArgumentException e) {
             System.out.println("Donation failed: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("An unexpected error occurred: " + e.getMessage());
         }
     }
 
@@ -76,8 +68,11 @@ public class DonorUI extends BaseUI {
             history.forEach(d -> System.out.printf("[%s] ID: %d | Amount: %.2f EUR\n",
                     d.getDate(), d.getId(), d.getAmount()));
 
-            double total = history.stream().mapToDouble(Donation::getAmount).sum();
-            System.out.printf("Total donated: %.2f EUR\n", total);
+            double total = financialService.calculateTotalDonatedBy(donor);
+
+            System.out.println("----------------------------------------");
+            System.out.printf("TOTAL DONATED: %.2f EUR\n", total);
+            System.out.println("----------------------------------------");
         }
     }
 }

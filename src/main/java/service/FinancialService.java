@@ -3,6 +3,7 @@ package service;
 import model.Donor;
 import model.Expense;
 import model.Donation;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,6 +18,26 @@ public class FinancialService {
     public FinancialService(Shelter shelter, UserService userService) {
         this.shelter = shelter;
         this.userService = userService;
+    }
+
+
+    public void registerDonation(Donor donor, double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Donation amount must be greater than 0.");
+        }
+
+        int nextId = donations.size() + 8000;
+        LocalDate today = LocalDate.now();
+
+        Donation newDonation = new Donation(nextId, amount, today, donor.getId());
+
+        addDonation(newDonation);
+    }
+
+    public double calculateTotalDonatedBy(Donor donor) {
+        return donor.getDonationHistory().stream()
+                .mapToDouble(Donation::getAmount)
+                .sum();
     }
 
     public void addExpense(Expense expense) throws IllegalArgumentException {
@@ -38,7 +59,7 @@ public class FinancialService {
 
         userService.findUserById(donation.getDonorId()).ifPresent(user -> {
             if (user instanceof Donor donor) {
-                donor.addDonation(donation);
+                donor.getDonationHistory().add(donation);
             } else {
                 throw new IllegalArgumentException("User with ID " + donation.getDonorId() + " is not a Donor.");
             }
