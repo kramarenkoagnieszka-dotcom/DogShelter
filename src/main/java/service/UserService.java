@@ -1,13 +1,31 @@
 package service;
 
-import model.User;
-import model.Admin;
+import model.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 public class UserService {
     private List<User> users = new ArrayList<>();
+
+    public void createAndAddUser(String roleChoice, String firstName, String lastName,
+                                 String username, String password, String email) {
+
+        int nextId = users.stream()
+                .mapToInt(User::getId)
+                .max()
+                .orElse(100) + 1;
+
+        User newUser = switch (roleChoice) {
+            case "1" -> new Staff(nextId, firstName, lastName, username, password, email);
+            case "2" -> new Adopter(nextId, firstName, lastName, username, password, email);
+            case "3" -> new Donor(nextId, firstName, lastName, username, password, email);
+            case "4" -> new Admin(nextId, firstName, lastName, username, password, email);
+            default -> throw new IllegalArgumentException("Invalid role selected: " + roleChoice);
+        };
+
+        addUser(newUser);
+    }
 
     public void addUser(User newUser) {
         if (users.stream().anyMatch(u -> u.getId() == newUser.getId())) {

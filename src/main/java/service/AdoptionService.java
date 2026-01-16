@@ -55,6 +55,11 @@ public class AdoptionService {
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("Application with ID " + id + " not found."));
 
+        if (application.getStatus() != AdoptionApplication.ApplicationStatus.PENDING) {
+            throw new IllegalStateException("This application has already been processed and its status is: "
+                    + application.getStatus());
+        }
+
         application.setStatus(newStatus);
 
         if (newStatus == AdoptionApplication.ApplicationStatus.ACCEPTED) {
