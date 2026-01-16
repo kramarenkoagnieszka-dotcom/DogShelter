@@ -1,11 +1,10 @@
 package service;
 
 import model.*;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import static org.assertj.core.api.Assertions.*;
 
 class FinancialServiceTest {
 
@@ -39,11 +38,11 @@ class FinancialServiceTest {
 
         financialService.registerExpense(staff, dog.getId(), 250.0, "Medical checkup");
 
-        assertThat(financialService.getBalance()).isEqualTo(750.0);
+        Assertions.assertThat(financialService.getBalance()).isEqualTo(750.0);
 
-        assertThat(dog.getExpenses()).hasSize(1);
-        assertThat(dog.getExpenses().get(0).getAmount()).isEqualTo(250.0);
-        assertThat(dog.getExpenses().get(0).getDescription()).isEqualTo("Medical checkup");
+        Assertions.assertThat(dog.getExpenses()).hasSize(1);
+        Assertions.assertThat(dog.getExpenses().get(0).getAmount()).isEqualTo(250.0);
+        Assertions.assertThat(dog.getExpenses().get(0).getDescription()).isEqualTo("Medical checkup");
     }
 
     @Test
@@ -51,7 +50,7 @@ class FinancialServiceTest {
     void shouldThrowExceptionForInvalidDogId() {
         financialService.registerDonation(donor, 100.0);
 
-        assertThatThrownBy(() -> financialService.registerExpense(staff, 999, 50.0, "Treats"))
+        Assertions.assertThatThrownBy(() -> financialService.registerExpense(staff, 999, 50.0, "Treats"))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("Dog with ID 999 not found");
     }
@@ -64,6 +63,6 @@ class FinancialServiceTest {
 
         double total = financialService.calculateTotalDonatedBy(donor);
 
-        assertThat(total).isEqualTo(350.0);
+        Assertions.assertThat(total).isEqualTo(350.0);
     }
 }
