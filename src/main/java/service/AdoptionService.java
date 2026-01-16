@@ -53,17 +53,17 @@ public class AdoptionService {
         AdoptionApplication application = applications.stream()
                 .filter(app -> app.getId() == id)
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("Application with ID " + id + " not found."));
+                .orElseThrow(() -> new IllegalArgumentException("Application not found."));
 
         if (application.getStatus() != AdoptionApplication.ApplicationStatus.PENDING) {
-            throw new IllegalStateException("This application has already been processed and its status is: "
-                    + application.getStatus());
+            throw new IllegalStateException("Application already processed.");
         }
 
         application.setStatus(newStatus);
 
         if (newStatus == AdoptionApplication.ApplicationStatus.ACCEPTED) {
-            application.getDog().setAdopted(true);
+            int dogId = application.getDog().getId();
+            shelter.removeDogAfterAdoption(dogId);
         }
     }
 
