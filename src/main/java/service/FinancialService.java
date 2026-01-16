@@ -3,6 +3,7 @@ package service;
 import model.Donor;
 import model.Expense;
 import model.Donation;
+import model.Staff;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,17 @@ public class FinancialService {
         this.userService = userService;
     }
 
+    public void registerExpense(Staff staff, int dogId, double amount, String description) {
+        shelter.findDogById(dogId)
+                .orElseThrow(() -> new IllegalArgumentException("Dog with ID " + dogId + " not found."));
+
+        int transactionId = expenses.size() + 5000;
+        LocalDate today = LocalDate.now();
+
+        Expense newExpense = new Expense(transactionId, amount, today, description, dogId, staff.getId());
+
+        addExpense(newExpense);
+    }
 
     public void registerDonation(Donor donor, double amount) {
         if (amount <= 0) {
@@ -40,9 +52,9 @@ public class FinancialService {
                 .sum();
     }
 
-    public void addExpense(Expense expense) throws IllegalArgumentException {
+    public void addExpense(Expense expense) {
         if (expense.getAmount() > balance) {
-            throw new IllegalArgumentException("Insufficient funds. Current balance: " + balance);
+            throw new IllegalArgumentException("Insufficient funds. Current balance: " + balance + " PLN.");
         }
 
         expenses.add(expense);
@@ -54,15 +66,16 @@ public class FinancialService {
     }
 
     public void addDonation(Donation donation) {
-        donations.add(donation);
-        balance += donation.getAmount();
-
-        userService.findUserById(donation.getDonorId()).ifPresent(user -> {
+        userService.findUserById(donation.getDonorId()).ifPresentOrElse(user -> {
             if (user instanceof Donor donor) {
+                donations.add(donation);
+                balance += donation.getAmount();
                 donor.getDonationHistory().add(donation);
             } else {
                 throw new IllegalArgumentException("User with ID " + donation.getDonorId() + " is not a Donor.");
             }
+        }, () -> {
+            throw new IllegalArgumentException("Donor with ID " + donation.getDonorId() + " not found.");
         });
     }
 
