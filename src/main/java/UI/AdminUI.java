@@ -111,12 +111,55 @@ public class AdminUI extends BaseUI {
     }
 
     private void handleShelterOverview() {
-        System.out.println("\n--- OVERVIEW ---");
-        System.out.printf("Balance: %.2f PLN\n", financialService.getBalance());
-        System.out.println("Dogs in shelter: " + shelter.getDogs().size());
-        shelter.getDogs().forEach(d -> System.out.println("- " + d.getName() + " (" + d.getBreed() + ")"));
-        System.out.println("\nPress Enter...");
-        scanner.nextLine();
+        boolean back = false;
+        while (!back) {
+            System.out.println("\n--- SHELTER GLOBAL OVERVIEW ---");
+            System.out.printf("Current Balance: %.2f PLN\n", financialService.getBalance());
+            System.out.println("1. View All Donations");
+            System.out.println("2. View All Expenses");
+            System.out.println("3. View Expenses by Staff ID");
+            System.out.println("4. Back");
+            System.out.print("Choice: ");
+
+            String choice = scanner.nextLine();
+            switch (choice) {
+                case "1" -> {
+                    System.out.println("\n--- DONATION HISTORY ---");
+                    var donations = financialService.getAllDonations();
+                    if (donations.isEmpty()) System.out.println("No donations recorded.");
+                    else donations.forEach(System.out::println);
+                }
+                case "2" -> {
+                    System.out.println("\n--- EXPENSE HISTORY ---");
+                    var expenses = financialService.getAllExpenses();
+                    if (expenses.isEmpty()) System.out.println("No expenses recorded.");
+                    else expenses.forEach(System.out::println);
+                }
+                case "3" -> handleStaffExpenses();
+                case "4" -> back = true;
+                default -> System.out.println("Invalid choice.");
+            }
+        }
+    }
+
+    private void handleStaffExpenses() {
+        try {
+            System.out.print("Enter Staff ID: ");
+            int staffId = Integer.parseInt(scanner.nextLine());
+
+            var staffExpenses = financialService.getExpensesByStaff(staffId);
+
+            System.out.println("\n--- EXPENSES FOR STAFF ID: " + staffId + " ---");
+            if (staffExpenses.isEmpty()) {
+                System.out.println("No expenses found for this staff member.");
+            } else {
+                staffExpenses.forEach(System.out::println);
+                double total = staffExpenses.stream().mapToDouble(FinancialTransaction::getAmount).sum();
+                System.out.printf("Total spent by this employee: %.2f PLN\n", total);
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Staff ID must be a number.");
+        }
     }
 
     private void handleRemoveUser() {
