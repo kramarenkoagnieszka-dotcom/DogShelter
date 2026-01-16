@@ -1,11 +1,11 @@
-package main.java.UI;
+package UI;
 
-import main.java.model.Dog;
-import main.java.model.DogProfile;
-import main.java.model.Expense;
-import main.java.model.Staff;
-import main.java.service.FinancialService;
-import main.java.service.Shelter;
+import model.Dog;
+import model.DogProfile;
+import model.Expense;
+import model.Staff;
+import service.FinancialService;
+import service.Shelter;
 import java.util.Scanner;
 
 public class StaffUI extends BaseUI {

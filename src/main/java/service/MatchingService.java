@@ -1,9 +1,9 @@
-package main.java.service;
+package service;
 
-import main.java.model.AdopterProfile;
-import main.java.model.Dog;
-import main.java.model.Adopter;
-import main.java.model.DogProfile;
+import model.AdopterProfile;
+import model.Dog;
+import model.Adopter;
+import model.DogProfile;
 
 public class MatchingService {
 

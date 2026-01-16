@@ -1,4 +1,4 @@
-package main.java.persistence;
+package persistence;
 
 public class FileHandler {
 }

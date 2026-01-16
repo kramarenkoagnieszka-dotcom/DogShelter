@@ -1,10 +1,10 @@
-package main.java.UI;
+package UI;
 
-import main.java.model.Adopter;
-import main.java.model.AdopterProfile;
-import main.java.model.Dog;
-import main.java.service.AdoptionService;
-import main.java.service.Shelter;
+import model.Adopter;
+import model.AdopterProfile;
+import model.Dog;
+import service.AdoptionService;
+import service.Shelter;
 import java.util.Scanner;
 
 public class AdopterUI extends BaseUI {

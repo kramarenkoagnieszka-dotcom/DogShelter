@@ -1,8 +1,8 @@
-package main.java.service;
+package service;
 
-import main.java.model.Donor;
-import main.java.model.Expense;
-import main.java.model.Donation;
+import model.Donor;
+import model.Expense;
+import model.Donation;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;

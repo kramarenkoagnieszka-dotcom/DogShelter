@@ -1,7 +1,7 @@
-package main.java.UI;
+package UI;
 
-import main.java.service.Shelter;
-import main.java.model.Dog;
+import service.Shelter;
+import model.Dog;
 import java.util.Scanner;
 import java.util.List;
 

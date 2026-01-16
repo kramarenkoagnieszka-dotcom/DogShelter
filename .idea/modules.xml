@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DogShelter_JavaCore.iml" filepath="$PROJECT_DIR$/DogShelter_JavaCore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/DogShelter_JavaCore.iml" filepath="$PROJECT_DIR$/.idea/DogShelter_JavaCore.iml" />
     </modules>
   </component>
 </project>

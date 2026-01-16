@@ -1,8 +1,6 @@
-package main.java;
-
-import main.java.model.*;
-import main.java.service.*;
-import main.java.UI.*;
+import model.*;
+import service.*;
+import UI.*;
 
 import java.util.Scanner;
 

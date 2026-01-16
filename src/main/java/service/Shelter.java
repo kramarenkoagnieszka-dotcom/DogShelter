@@ -1,6 +1,6 @@
-package main.java.service;
+package service;
 
-import main.java.model.Dog;
+import model.Dog;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

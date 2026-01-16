@@ -1,4 +1,4 @@
-package main.java.model;
+package model;
 
 public class DogProfile {
     private final int energyLevel;

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="81cb1291-bf78-4246-aa4a-3c5d766fd5c0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/DogShelter_JavaCore.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/UI/AdminUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/UI/AdopterUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/UI/BaseUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/UI/DonorUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/UI/StaffUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/persistence/FileHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/service/ShelterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DogShelter_JavaCore.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/AdminUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/AdopterUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/BaseUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/DonorUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/StaffUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Adopter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Adopter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/AdopterProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/AdopterProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/AdoptionApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/AdoptionApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/DogProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DogProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Donation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Donation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Donor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Donor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Expense.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/FinancialTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/FinancialTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/persistence/FileHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/AdoptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/AdoptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/FinancialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/FinancialService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/MatchingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/MatchingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/Shelter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/Shelter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="38KottPKryj58KY3WnRUJsrptsl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="81cb1291-bf78-4246-aa4a-3c5d766fd5c0" name="Changes" comment="" />
+      <created>1768557842923</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1768557842923</updated>
+    </task>
+    <servers />
+  </component>
+</project>

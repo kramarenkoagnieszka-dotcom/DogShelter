@@ -1,16 +1,16 @@
-package main.java.UI;
+package UI;
 
-import main.java.model.Admin;
-import main.java.model.AdoptionApplication;
-import main.java.model.Dog;
-import main.java.model.User;
-import main.java.model.Staff;
-import main.java.model.Adopter;
-import main.java.model.Donor;
-import main.java.service.AdoptionService;
-import main.java.service.FinancialService;
-import main.java.service.Shelter;
-import main.java.service.UserService;
+import model.Admin;
+import model.AdoptionApplication;
+import model.Dog;
+import model.User;
+import model.Staff;
+import model.Adopter;
+import model.Donor;
+import service.AdoptionService;
+import service.FinancialService;
+import service.Shelter;
+import service.UserService;
 
 import java.util.List;
 import java.util.Scanner;

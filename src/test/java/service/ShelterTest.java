@@ -1,6 +1,6 @@
-package test.java;
+package service;
 import org.junit.jupiter.api.Test;
 
 public class ShelterTest {
-    @Test
+
 }

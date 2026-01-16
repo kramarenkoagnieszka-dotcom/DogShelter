@@ -1,8 +1,8 @@
-package main.java.service;
+package service;
 
-import main.java.model.AdoptionApplication;
-import main.java.model.Dog;
-import main.java.model.Adopter;
+import model.AdoptionApplication;
+import model.Dog;
+import model.Adopter;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;

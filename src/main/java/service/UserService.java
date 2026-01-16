@@ -1,7 +1,7 @@
-package main.java.service;
+package service;
 
-import main.java.model.User;
-import main.java.model.Admin;
+import model.User;
+import model.Admin;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
