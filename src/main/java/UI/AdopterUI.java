@@ -2,7 +2,6 @@ package UI;
 
 import model.Adopter;
 import model.AdopterProfile;
-import model.Dog;
 import service.AdoptionService;
 import service.Shelter;
 import java.util.Scanner;
@@ -31,8 +30,8 @@ public class AdopterUI extends BaseUI {
 
             String choice = scanner.nextLine();
             switch (choice) {
-                case "1" -> handleBrowseDogs(); // Metoda z BaseUI
-                case "2" -> handleSearchDogs(); // Metoda z BaseUI
+                case "1" -> handleBrowseDogs();
+                case "2" -> handleSearchDogs();
                 case "3" -> handleUpdateQuestionnaire(adopter);
                 case "4" -> handleSubmitApplication(adopter);
                 case "5" -> handleShowMyApplications(adopter);
@@ -47,26 +46,19 @@ public class AdopterUI extends BaseUI {
         try {
             System.out.print("Preferred Dog Energy Level (1-5): ");
             int energy = Integer.parseInt(scanner.nextLine());
-            System.out.print("Do you have a garden? (y/n): ");
-            boolean garden = scanner.nextLine().equalsIgnoreCase("y");
-            System.out.print("Do you have cats? (y/n): ");
-            boolean cats = scanner.nextLine().equalsIgnoreCase("y");
-            System.out.print("Do you have other dogs? (y/n): ");
-            boolean dogs = scanner.nextLine().equalsIgnoreCase("y");
-            System.out.print("Do you have children? (y/n): ");
-            boolean kids = scanner.nextLine().equalsIgnoreCase("y");
+
+            boolean garden = askYesNo("Do you have a garden?");
+            boolean cats = askYesNo("Do you have cats?");
+            boolean dogs = askYesNo("Do you have other dogs?");
+            boolean kids = askYesNo("Do you have children?");
 
             System.out.print("Monthly budget for dog care (PLN): ");
             double budget = Double.parseDouble(scanner.nextLine());
-            System.out.print("Are you willing to adopt a disabled dog? (y/n): ");
-            boolean disabled = scanner.nextLine().equalsIgnoreCase("y");
 
-            System.out.print("Have you had a dog before? (y/n): ");
-            boolean hadDog = scanner.nextLine().equalsIgnoreCase("y");
-            System.out.print("Do you have behavioral knowledge? (y/n): ");
-            boolean behaviorKnowledge = scanner.nextLine().equalsIgnoreCase("y");
-            System.out.print("Willing to work with behavioral issues? (y/n): ");
-            boolean behaviorIssues = scanner.nextLine().equalsIgnoreCase("y");
+            boolean disabled = askYesNo("Are you willing to adopt a disabled dog?");
+            boolean hadDog = askYesNo("Have you had a dog before?");
+            boolean behaviorKnowledge = askYesNo("Do you have behavioral knowledge?");
+            boolean behaviorIssues = askYesNo("Willing to work with behavioral issues?");
 
             AdopterProfile newProfile = new AdopterProfile(
                     energy, garden, cats, dogs, kids,
@@ -74,47 +66,36 @@ public class AdopterUI extends BaseUI {
                     behaviorKnowledge, behaviorIssues
             );
 
-            adopter.setProfile(newProfile);
+            adoptionService.updateAdopterProfile(adopter, newProfile);
+
             System.out.println("\nSuccess: Profile updated. You can now apply for dogs.");
             System.out.println(newProfile);
 
         } catch (NumberFormatException e) {
             System.out.println("Error: Energy level and budget must be valid numbers.");
-        } catch (Exception e) {
-            System.out.println("An error occurred: " + e.getMessage());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Invalid data: " + e.getMessage());
         }
     }
 
     private void handleSubmitApplication(Adopter adopter) {
-        if (adopter.getProfile() == null) {
-            System.out.println("Error: You must fill the questionnaire (option 3) before applying.");
-            return;
-        }
-
         try {
             System.out.print("Enter Dog ID you want to adopt: ");
             int dogId = Integer.parseInt(scanner.nextLine());
 
-            Dog dog = shelter.findDogById(dogId)
-                    .orElseThrow(() -> new IllegalArgumentException("Dog with ID " + dogId + " not found."));
-
-            if (dog.isAdopted()) {
-                System.out.println("This dog is already adopted.");
-                return;
-            }
-
             System.out.print("Additional notes for the shelter: ");
             String notes = scanner.nextLine();
 
-            int appId = adoptionService.getAllApplications().size() + 2000;
+            adoptionService.processAdoptionRequest(adopter, dogId, notes);
 
-            adoptionService.addApplication(appId, dog, adopter, notes);
-            System.out.println("Application submitted successfully! Your match score was high enough.");
+            System.out.println("Application submitted successfully!");
 
-        } catch (IllegalStateException e) {
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Dog ID must be a number.");
+        } catch (IllegalStateException | IllegalArgumentException e) {
             System.out.println("Application Failed: " + e.getMessage());
         } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("An unexpected error occurred: " + e.getMessage());
         }
     }
 
@@ -125,10 +106,12 @@ public class AdopterUI extends BaseUI {
         if (myApps.isEmpty()) {
             System.out.println("No applications found.");
         } else {
-            myApps.forEach(app -> {
-                System.out.println("-----------------------");
-                System.out.println(app);
-            });
+            myApps.forEach(System.out::println);
         }
+    }
+
+    private boolean askYesNo(String message) {
+        System.out.print(message + " (y/n): ");
+        return scanner.nextLine().equalsIgnoreCase("y");
     }
 }

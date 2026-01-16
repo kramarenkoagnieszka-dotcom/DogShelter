@@ -113,7 +113,7 @@ public class Main {
         shelter = new Shelter();
         financialService = new FinancialService(shelter, userService);
         MatchingService matchingService = new MatchingService();
-        adoptionService = new AdoptionService(matchingService);
+        adoptionService = new AdoptionService(matchingService, shelter);
 
         userService.addUser(new Admin(1, "System", "Admin", "admin", "admin", "admin@shelter.com"));
     }

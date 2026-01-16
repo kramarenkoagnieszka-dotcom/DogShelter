@@ -1,8 +1,6 @@
 package service;
 
-import model.AdoptionApplication;
-import model.Dog;
-import model.Adopter;
+import model.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,24 +10,43 @@ import java.util.stream.Collectors;
 public class AdoptionService {
     private List<AdoptionApplication> applications = new ArrayList<>();
     private final MatchingService matchingService;
+    private final Shelter shelter;
 
-    public AdoptionService(MatchingService matchingService) {
+    public AdoptionService(MatchingService matchingService, Shelter shelter) {
         this.matchingService = matchingService;
+        this.shelter = shelter;
     }
 
-    public void addApplication(int id, Dog dog, Adopter adopter, String notes) {
+    public void processAdoptionRequest(Adopter adopter, int dogId, String notes) {
+        if (adopter.getProfile() == null) {
+            throw new IllegalStateException("You must fill the questionnaire before applying.");
+        }
+
+        Dog dog = shelter.findDogById(dogId)
+                .orElseThrow(() -> new IllegalArgumentException("Dog with ID " + dogId + " not found."));
+
+        if (dog.isAdopted()) {
+            throw new IllegalStateException("Dog " + dog.getName() + " is already adopted.");
+        }
+
         double match = matchingService.calculateMatchPercentage(dog, adopter);
 
         if (match < 50.0) {
-            throw new IllegalStateException("Application rejected: Match percentage is too low (" + match + "%) or critical requirements not met.");
+            throw new IllegalStateException("Application rejected: Match percentage is too low ("
+                    + String.format("%.1f", match) + "%).");
         }
 
-        if (applications.stream().anyMatch(app -> app.getId() == id)) {
-            throw new IllegalArgumentException("Application with ID " + id + " already exists.");
-        }
+        int nextId = applications.size() + 2000;
 
-        AdoptionApplication app = new AdoptionApplication(id, dog, adopter, match, notes);
+        AdoptionApplication app = new AdoptionApplication(nextId, dog, adopter, match, notes);
         applications.add(app);
+    }
+
+    public void updateAdopterProfile(Adopter adopter, AdopterProfile profile) {
+        if (adopter == null || profile == null) {
+            throw new IllegalArgumentException("Adopter and profile cannot be null.");
+        }
+        adopter.setProfile(profile);
     }
 
     public void changeStatus(long id, AdoptionApplication.ApplicationStatus newStatus) {
@@ -39,6 +56,10 @@ public class AdoptionService {
                 .orElseThrow(() -> new IllegalArgumentException("Application with ID " + id + " not found."));
 
         application.setStatus(newStatus);
+
+        if (newStatus == AdoptionApplication.ApplicationStatus.ACCEPTED) {
+            application.getDog().setAdopted(true);
+        }
     }
 
     public Optional<AdoptionApplication> getApplicationById(long id) {
