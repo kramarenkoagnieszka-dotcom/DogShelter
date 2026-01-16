@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81cb1291-bf78-4246-aa4a-3c5d766fd5c0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/service/MatchingServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/service/FinanacialServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
