@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public class Shelter {
     private List<Dog> dogs;
-    private int dogSequence;
+    private int dogSequence; // Licznik sekwencji ID
 
     public Shelter() {
         this.dogs = new ArrayList<>();
@@ -17,16 +17,16 @@ public class Shelter {
 
     public Shelter(List<Dog> loadedDogs) {
         this.dogs = (loadedDogs != null) ? loadedDogs : new ArrayList<>();
+        this.dogSequence = this.dogs.stream()
+                .mapToInt(Dog::getId)
+                .max()
+                .orElse(0);
     }
 
     public void createAndAddDog(String name, String breed, int age, DogProfile profile) {
-        int nextId = dogs.stream()
-                .mapToInt(Dog::getId)
-                .max()
-                .orElse(0) + 1;
-
-        Dog newDog = new Dog(nextId, name, age, breed, profile);
-        addDog(newDog);
+        dogSequence++;
+        Dog newDog = new Dog(dogSequence, name, age, breed, profile);
+        dogs.add(newDog);
     }
 
     public void addDog(Dog dog) {

@@ -8,28 +8,31 @@ import java.util.Optional;
 public class UserService {
 
     private List<User> users;
+    private int lastUserId;
 
     public UserService() {
         this.users = new ArrayList<>();
+        this.lastUserId = 100; // Startowe ID
     }
 
     public UserService(List<User> loadedUsers) {
         this.users = (loadedUsers != null) ? loadedUsers : new ArrayList<>();
+        this.lastUserId = users.stream()
+                .mapToInt(User::getId)
+                .max()
+                .orElse(100);
     }
 
     public void createAndAddUser(String roleChoice, String firstName, String lastName,
                                  String username, String password, String email) {
 
-        int nextId = users.stream()
-                .mapToInt(User::getId)
-                .max()
-                .orElse(100) + 1;
+        lastUserId++;
 
         User newUser = switch (roleChoice) {
-            case "1" -> new Staff(nextId, firstName, lastName, username, password, email);
-            case "2" -> new Adopter(nextId, firstName, lastName, username, password, email);
-            case "3" -> new Donor(nextId, firstName, lastName, username, password, email);
-            case "4" -> new Admin(nextId, firstName, lastName, username, password, email);
+            case "1" -> new Staff(lastUserId, firstName, lastName, username, password, email);
+            case "2" -> new Adopter(lastUserId, firstName, lastName, username, password, email);
+            case "3" -> new Donor(lastUserId, firstName, lastName, username, password, email);
+            case "4" -> new Admin(lastUserId, firstName, lastName, username, password, email);
             default -> throw new IllegalArgumentException("Invalid role selected: " + roleChoice);
         };
 
@@ -48,6 +51,10 @@ public class UserService {
         }
 
         users.add(newUser);
+
+        if (newUser.getId() > lastUserId) {
+            lastUserId = newUser.getId();
+        }
     }
 
     public User login(String username, String password) {
@@ -78,11 +85,7 @@ public class UserService {
         return users.stream().anyMatch(u -> u instanceof Admin);
     }
 
-    public List<User> getUsers() {
-        return new ArrayList<>(users);
-    }
-
     public List<User> getAllUsers() {
-        return getUsers();
+        return new ArrayList<>(users);
     }
 }
