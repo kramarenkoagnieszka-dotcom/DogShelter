@@ -73,29 +73,35 @@ public class AdminUI extends BaseUI {
                 : adoptionService.getAllApplications();
 
         if (apps.isEmpty()) {
-            System.out.println("No applications found for the selected filter.");
+            System.out.println("No applications found.");
             return;
         }
+        System.out.println("\nID  | Status   | Match | Dog        | Adopter");
+        System.out.println("---------------------------------------------------");
+        apps.forEach(app -> System.out.printf("[%d] | %-8s | %3.0f%% | %-10s | %s\n",
+                app.getId(),
+                app.getStatus(),
+                app.getMatchPercentage(),
+                app.getDog().getName(),
+                app.getAdopter().getLastName()));
 
-        apps.forEach(app -> System.out.printf("[%d] Dog: %s | Adopter: %s | Status: %s\n",
-                app.getId(), app.getDog().getName(), app.getAdopter().getLastName(), app.getStatus()));
-
-        System.out.print("\nEnter ID to process (0 to back): ");
+        System.out.print("\nEnter ID to view details and process (0 to back): ");
         try {
             int appId = Integer.parseInt(scanner.nextLine());
             if (appId == 0) return;
 
             AdoptionApplication app = adoptionService.getApplicationById(appId)
-                    .orElseThrow(() -> new IllegalArgumentException("Application with ID " + appId + " not found."));
+                    .orElseThrow(() -> new IllegalArgumentException("Application not found."));
 
-            System.out.println("\nProcessing: " + app.getDog().getName() + " for " + app.getAdopter().getFirstName());
-            System.out.print("Decision (1: ACCEPT, 2: REJECT, 3: SKIP): ");
+            displayDetailedApplicationView(app);
+
+            System.out.print("\nDecision (1: ACCEPT, 2: REJECT, 0: SKIP): ");
             String decision = scanner.nextLine();
 
             switch (decision) {
                 case "1" -> {
                     adoptionService.changeStatus(appId, AdoptionApplication.ApplicationStatus.ACCEPTED);
-                    System.out.println("Application ACCEPTED. Dog is now marked as adopted.");
+                    System.out.println("Application ACCEPTED.");
                 }
                 case "2" -> {
                     adoptionService.changeStatus(appId, AdoptionApplication.ApplicationStatus.REJECTED);
@@ -103,11 +109,28 @@ public class AdminUI extends BaseUI {
                 }
                 default -> System.out.println("Decision skipped.");
             }
-        } catch (NumberFormatException e) {
-            System.out.println("Error: Invalid ID format.");
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
+    }
+
+    private void displayDetailedApplicationView(AdoptionApplication app) {
+        System.out.println("\n" + "=".repeat(50));
+        System.out.println("   DETAILED APPLICATION VIEW - ID: " + app.getId());
+        System.out.println("=".repeat(50));
+
+        System.out.println("\n[DOG DETAILS]");
+        System.out.println("Name: " + app.getDog().getName() + " | Breed: " + app.getDog().getBreed() + " | Age: " + app.getDog().getAge());
+        System.out.println("Profile: " + app.getDog().getProfile());
+
+        System.out.println("\n[ADOPTER DETAILS]");
+        System.out.println("Name: " + app.getAdopter().getFirstName() + " " + app.getAdopter().getLastName());
+        System.out.println("Profile: " + (app.getAdopter().getProfile() != null ? app.getAdopter().getProfile() : "No questionnaire filled."));
+
+        System.out.println("\n[APPLICATION INFO]");
+        System.out.printf("Match Score: %.0f%%\n", app.getMatchPercentage());
+        System.out.println("Notes: " + (app.getNotes().isEmpty() ? "None" : app.getNotes()));
+        System.out.println("=".repeat(50));
     }
 
     private void handleShelterOverview() {
