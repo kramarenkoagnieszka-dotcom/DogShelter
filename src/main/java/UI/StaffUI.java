@@ -23,7 +23,7 @@ public class StaffUI extends BaseUI {
                 1. Add New Dog
                 2. List All Dogs
                 3. Search Dogs
-                4. Add Shelter Expense
+                4. Manage Expenses
                 5. Logout
                 Choice:\s""");
 
@@ -32,10 +32,67 @@ public class StaffUI extends BaseUI {
                 case "1" -> handleAddDog();
                 case "2" -> handleBrowseDogs();
                 case "3" -> handleSearchDogs();
-                case "4" -> handleAddExpense(staff);
+                case "4" -> manageExpensesMenu(staff); // Przejście do podmenu
                 case "5" -> active = false;
                 default -> System.out.println("Invalid choice.");
             }
+        }
+    }
+    private void manageExpensesMenu(Staff staff) {
+        boolean back = false;
+        while (!back) {
+            System.out.println("""
+                
+                --- EXPENSE MANAGEMENT ---
+                1. Add New Expense
+                2. View My Expenses
+                3. View Expenses by Dog ID
+                4. Back to Main Menu
+                Choice:\s""");
+
+            String choice = scanner.nextLine();
+            switch (choice) {
+                case "1" -> handleAddExpense(staff);
+                case "2" -> handleViewMyExpenses(staff);
+                case "3" -> handleViewExpensesByDog();
+                case "4" -> back = true;
+                default -> System.out.println("Invalid choice.");
+            }
+        }
+    }
+
+    private void handleViewMyExpenses(Staff staff) {
+        System.out.println("\n--- MY RECORDED EXPENSES ---");
+        var myExpenses = financialService.getAllExpenses().stream()
+                .filter(e -> e.getStaffId() == staff.getId())
+                .toList();
+
+        displayExpenses(myExpenses);
+    }
+
+    private void handleViewExpensesByDog() {
+        try {
+            System.out.print("\nEnter Dog ID: ");
+            int dogId = Integer.parseInt(scanner.nextLine());
+            System.out.println("--- EXPENSES FOR DOG ID: " + dogId + " ---");
+
+            var dogExpenses = financialService.getAllExpenses().stream()
+                    .filter(e -> e.getDogId() == dogId)
+                    .toList();
+
+            displayExpenses(dogExpenses);
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Dog ID must be a number.");
+        }
+    }
+
+    private void displayExpenses(java.util.List<model.Expense> expenses) {
+        if (expenses.isEmpty()) {
+            System.out.println("No expenses found.");
+        } else {
+            expenses.forEach(System.out::println);
+            double total = expenses.stream().mapToDouble(model.Expense::getAmount).sum();
+            System.out.printf("TOTAL: %.2f EUR\n", total);
         }
     }
 
