@@ -3,6 +3,7 @@ package service;
 import model.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -23,7 +24,6 @@ public class AdoptionService {
         this.shelter = shelter;
         this.applications = (loadedApplications != null) ? loadedApplications : new ArrayList<>();
     }
-
 
     public void processAdoptionRequest(Adopter adopter, int dogId, String notes) {
         if (adopter.getProfile() == null) {
@@ -112,5 +112,23 @@ public class AdoptionService {
 
     public List<AdoptionApplication> getApplications() {
         return new ArrayList<>(applications);
+    }
+
+    public record DogMatchResult(Dog dog, double percentage) {}
+
+    public List<DogMatchResult> getRankedDogsForAdopter(Adopter adopter, List<Dog> allDogs) {
+        if (adopter.getProfile() == null) {
+            return allDogs.stream()
+                    .map(dog -> new DogMatchResult(dog, 0.0))
+                    .toList();
+        }
+
+        return allDogs.stream()
+                .map(dog -> {
+                    double score = matchingService.calculateMatchPercentage(dog, adopter);
+                    return new DogMatchResult(dog, score);
+                })
+                .sorted((a, b) -> Double.compare(b.percentage(), a.percentage()))
+                .toList();
     }
 }

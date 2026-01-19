@@ -2,8 +2,10 @@ package UI;
 
 import model.Adopter;
 import model.AdopterProfile;
+import model.Dog;
 import service.AdoptionService;
 import service.Shelter;
+import java.util.List;
 import java.util.Scanner;
 
 public class AdopterUI extends BaseUI {
@@ -30,7 +32,7 @@ public class AdopterUI extends BaseUI {
 
             String choice = scanner.nextLine();
             switch (choice) {
-                case "1" -> handleBrowseDogs();
+                case "1" -> handleBrowseDogs(adopter);
                 case "2" -> handleSearchDogs();
                 case "3" -> handleUpdateQuestionnaire(adopter);
                 case "4" -> handleSubmitApplication(adopter);
@@ -40,6 +42,28 @@ public class AdopterUI extends BaseUI {
             }
         }
     }
+
+    private void handleBrowseDogs(Adopter adopter) {
+        List<Dog> allDogs = shelter.getDogs();
+        if (allDogs.isEmpty()) {
+            System.out.println("No dogs available in the shelter.");
+            return;
+        }
+
+        if (adopter.getProfile() == null) {
+            System.out.println("\n--- AVAILABLE DOGS (Standard List) ---");
+            System.out.println("Note: Fill your profile to see matches sorted by compatibility.");
+            allDogs.forEach(System.out::println);
+        } else {
+            System.out.println("\n--- RECOMMENDED DOGS FOR YOU ---");
+            var rankedDogs = adoptionService.getRankedDogsForAdopter(adopter, allDogs);
+
+            for (AdoptionService.DogMatchResult result : rankedDogs) {
+                System.out.printf("[%3.0f%% Match] %s\n", result.percentage(), result.dog());
+            }
+        }
+    }
+
 
     private void handleUpdateQuestionnaire(Adopter adopter) {
         System.out.println("\n--- ADOPTION QUESTIONNAIRE (DETAILED) ---");
