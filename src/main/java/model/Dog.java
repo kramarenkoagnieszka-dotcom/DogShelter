@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Dog {
-    private final int id;
+    private int id;
     private String name;
     private int age;
     private String breed;
@@ -21,6 +21,7 @@ public class Dog {
         this.isAdopted = false;
         expenseList = new ArrayList<>();
     }
+    private Dog(){}
 
     public int getId() { return id; }
     public String getName() { return name; }

@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-class AdoptionServiceTest {
+public class AdoptionServiceTest {
 
     private AdoptionService adoptionService;
     private MatchingService matchingService;

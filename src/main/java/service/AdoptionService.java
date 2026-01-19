@@ -8,14 +8,22 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class AdoptionService {
-    private List<AdoptionApplication> applications = new ArrayList<>();
+    private List<AdoptionApplication> applications;
     private final MatchingService matchingService;
     private final Shelter shelter;
 
     public AdoptionService(MatchingService matchingService, Shelter shelter) {
         this.matchingService = matchingService;
         this.shelter = shelter;
+        this.applications = new ArrayList<>();
     }
+
+    public AdoptionService(MatchingService matchingService, Shelter shelter, List<AdoptionApplication> loadedApplications) {
+        this.matchingService = matchingService;
+        this.shelter = shelter;
+        this.applications = (loadedApplications != null) ? loadedApplications : new ArrayList<>();
+    }
+
 
     public void processAdoptionRequest(Adopter adopter, int dogId, String notes) {
         if (adopter.getProfile() == null) {
@@ -100,5 +108,9 @@ public class AdoptionService {
         return applications.stream()
                 .filter(app -> app.getStatus() == AdoptionApplication.ApplicationStatus.PENDING)
                 .collect(Collectors.toList());
+    }
+
+    public List<AdoptionApplication> getApplications() {
+        return new ArrayList<>(applications);
     }
 }

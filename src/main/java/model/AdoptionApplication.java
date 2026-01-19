@@ -24,6 +24,8 @@ public class AdoptionApplication {
         this.notes = notes;
     }
 
+    private AdoptionApplication(){}
+
     public enum ApplicationStatus {
         PENDING,
         ACCEPTED,

@@ -10,7 +10,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 
-class UserServiceTest {
+public class UserServiceTest {
 
     private UserService userService;
 

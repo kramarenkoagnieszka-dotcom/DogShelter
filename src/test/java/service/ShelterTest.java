@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 
-class ShelterTest {
+public class ShelterTest {
 
     private Shelter shelter;
     private DogProfile defaultProfile;

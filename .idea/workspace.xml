@@ -4,9 +4,114 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81cb1291-bf78-4246-aa4a-3c5d766fd5c0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/service/FinancialServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/service/FinanacialServiceTest.java" beforeDir="false" />
+    <list default="true" id="e8a9a1d5-74e8-45a5-aadc-e4721789e2cd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/shelter_data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/ShelterState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/UI/AdminUI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/UI/AdopterUI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/UI/BaseUI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/UI/DonorUI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/UI/StaffUI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/Admin.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/Adopter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/AdopterProfile.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/AdoptionApplication$ApplicationStatus.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/AdoptionApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/Dog.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/DogProfile.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/Donation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/Donor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/Expense.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/FinancialTransaction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/ShelterState.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/Staff.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/persistence/FileHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/service/AdoptionService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/service/FinancialService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/service/MatchingService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/service/Shelter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/service/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/2026-01-16T15-19-27_673.dumpstream" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-service.AdoptionServiceTest$ChangeStatusTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-service.AdoptionServiceTest$CleanupTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-service.AdoptionServiceTest$ProcessRequestTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-service.AdoptionServiceTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-service.FinancialServiceTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-service.MatchingServiceTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-service.ShelterTest$AddDogTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-service.ShelterTest$CreateAndAddDogTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-service.ShelterTest$RemoveDogTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-service.ShelterTest$SearchDogsTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-service.ShelterTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-service.UserServiceTest$AddUserTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-service.UserServiceTest$CreateAndAddUserTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-service.UserServiceTest$LoginTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-service.UserServiceTest$RemoveUserTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-service.UserServiceTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/service.AdoptionServiceTest$ChangeStatusTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/service.AdoptionServiceTest$CleanupTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/service.AdoptionServiceTest$ProcessRequestTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/service.AdoptionServiceTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/service.FinancialServiceTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/service.MatchingServiceTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/service.ShelterTest$AddDogTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/service.ShelterTest$CreateAndAddDogTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/service.ShelterTest$RemoveDogTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/service.ShelterTest$SearchDogsTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/service.ShelterTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/service.UserServiceTest$AddUserTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/service.UserServiceTest$CreateAndAddUserTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/service.UserServiceTest$LoginTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/service.UserServiceTest$RemoveUserTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/service.UserServiceTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/service/AdoptionServiceTest$ChangeStatusTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/service/AdoptionServiceTest$CleanupTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/service/AdoptionServiceTest$ProcessRequestTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/service/AdoptionServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/service/FinancialServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/service/MatchingServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/service/ShelterTest$AddDogTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/service/ShelterTest$CreateAndAddDogTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/service/ShelterTest$RemoveDogTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/service/ShelterTest$SearchDogsTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/service/ShelterTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/service/UserServiceTest$AddUserTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/service/UserServiceTest$CreateAndAddUserTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/service/UserServiceTest$LoginTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/service/UserServiceTest$RemoveUserTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/service/UserServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Adopter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Adopter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/AdopterProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/AdopterProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/AdoptionApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/AdoptionApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DogProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DogProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Donation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Donation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Donor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Donor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Expense.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/FinancialTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/FinancialTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/FileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/AdoptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/AdoptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/FinancialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/FinancialService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/Shelter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/Shelter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/service/AdoptionServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/AdoptionServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/service/FinancialServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/FinancialServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/service/MatchingServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/MatchingServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/service/ShelterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/ShelterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/UserServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,30 +128,36 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
-}]]></component>
-  <component name="ProjectId" id="38KottPKryj58KY3WnRUJsrptsl" />
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="38LJ2RTVonlbYbMfMFvzDcQ3Ot9" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.DogShelter_JavaCore [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.DogShelter_JavaCore [test].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/IdeaProjects/DogShelter_JavaCore&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="service" />
-      <recent name="" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\DogShelter_JavaCore" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -58,12 +169,23 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="81cb1291-bf78-4246-aa4a-3c5d766fd5c0" name="Changes" comment="" />
-      <created>1768557842923</created>
+      <changelist id="e8a9a1d5-74e8-45a5-aadc-e4721789e2cd" name="Changes" comment="" />
+      <created>1768572346437</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1768557842923</updated>
+      <updated>1768572346437</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -1,13 +1,13 @@
 package model;
 
 public class DogProfile {
-    private final int energyLevel;
-    private final boolean needsGarden;
-    private final boolean goodWithCats;
-    private final boolean goodWithDogs;
-    private final boolean goodWithKids;
-    private final boolean specialMedicalNeeds;
-    private final boolean specialBehavioralNeeds;
+    private int energyLevel;
+    private boolean needsGarden;
+    private boolean goodWithCats;
+    private boolean goodWithDogs;
+    private boolean goodWithKids;
+    private boolean specialMedicalNeeds;
+    private boolean specialBehavioralNeeds;
 
     public DogProfile(int energyLevel, boolean needsGarden, boolean goodWithCats,
                       boolean goodWithDogs, boolean goodWithKids,
@@ -20,6 +20,9 @@ public class DogProfile {
         this.specialMedicalNeeds = specialMedicalNeeds;
         this.specialBehavioralNeeds = specialBehavioralNeeds;
     }
+
+    private DogProfile(){}
+
     @Override
     public String toString() {
         return String.format(

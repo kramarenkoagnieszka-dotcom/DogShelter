@@ -1,8 +1,22 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.NAME,
+        include = JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = Staff.class, name = "staff"),
+        @JsonSubTypes.Type(value = Donor.class, name = "donor"),
+        @JsonSubTypes.Type(value = Adopter.class, name = "adopter"),
+        @JsonSubTypes.Type(value = Admin.class, name = "admin")
+})
+
 public abstract class User {
-    private final int id;
-    private final String username;
+    private int id;
+    private String username;
     private String firstName;
     private String lastName;
     private String password;
@@ -16,6 +30,7 @@ public abstract class User {
         this.password = password;
         this.email = email;
     }
+    protected User(){}
 
     @Override
     public String toString() {

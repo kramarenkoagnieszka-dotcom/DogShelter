@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-class MatchingServiceTest {
+public class MatchingServiceTest {
 
     private MatchingService matchingService;
 

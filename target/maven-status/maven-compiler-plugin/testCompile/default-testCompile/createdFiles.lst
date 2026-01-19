@@ -1,0 +1,16 @@
+service\ShelterTest.class
+service\AdoptionServiceTest.class
+service\ShelterTest$CreateAndAddDogTests.class
+service\UserServiceTest$AddUserTests.class
+service\ShelterTest$SearchDogsTests.class
+service\UserServiceTest$CreateAndAddUserTests.class
+service\ShelterTest$RemoveDogTests.class
+service\AdoptionServiceTest$ProcessRequestTests.class
+service\UserServiceTest$LoginTests.class
+service\AdoptionServiceTest$ChangeStatusTests.class
+service\FinancialServiceTest.class
+service\UserServiceTest.class
+service\MatchingServiceTest.class
+service\ShelterTest$AddDogTests.class
+service\UserServiceTest$RemoveUserTests.class
+service\AdoptionServiceTest$CleanupTests.class

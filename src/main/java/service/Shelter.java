@@ -7,7 +7,17 @@ import java.util.List;
 import java.util.Optional;
 
 public class Shelter {
-    private List<Dog> dogs = new ArrayList<>();
+    private List<Dog> dogs;
+    private int dogSequence;
+
+    public Shelter() {
+        this.dogs = new ArrayList<>();
+        this.dogSequence = 0;
+    }
+
+    public Shelter(List<Dog> loadedDogs) {
+        this.dogs = (loadedDogs != null) ? loadedDogs : new ArrayList<>();
+    }
 
     public void createAndAddDog(String name, String breed, int age, DogProfile profile) {
         int nextId = dogs.stream()

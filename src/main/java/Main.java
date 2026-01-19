@@ -1,22 +1,28 @@
 import model.*;
 import service.*;
 import UI.*;
+import persistence.FileHandler;
 
 import java.util.Scanner;
 
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
+    private static final String FILE_PATH = "shelter_data.json";
+    private static final FileHandler fileHandler = new FileHandler();
+
     private static UserService userService;
     private static Shelter shelter;
     private static AdoptionService adoptionService;
     private static FinancialService financialService;
 
     public static void main(String[] args) {
+        // Inicjalizacja i wczytanie danych z pliku
         initializeServices();
 
         System.out.println("Welcome to Shelter Management System");
 
-        while (true) {
+        boolean running = true;
+        while (running) {
             try {
                 System.out.println("""
                 
@@ -28,21 +34,62 @@ public class Main {
 
                 String choice = scanner.nextLine();
 
-                if (choice.equals("1")) {
-                    handleLogin();
-                } else if (choice.equals("2")) {
-                    handleAddNewUser();
-                } else if (choice.equals("3")) {
-                    System.out.println("Closing system. Goodbye!");
-                    System.exit(0);
-                } else {
-                    System.out.println("Invalid choice.");
+                switch (choice) {
+                    case "1" -> handleLogin();
+                    case "2" -> handleAddNewUser();
+                    case "3" -> {
+                        saveSystemData();
+                        System.out.println("Data saved. Closing system. Goodbye!");
+                        running = false;
+                    }
+                    default -> System.out.println("Invalid choice.");
                 }
 
             } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());
             }
         }
+    }
+
+    private static void initializeServices() {
+
+        ShelterState state = fileHandler.load(FILE_PATH, ShelterState.class);
+
+        if (state == null) {
+            state = new ShelterState();
+        }
+
+        shelter = new Shelter(state.dogs);
+        userService = new UserService(state.users);
+
+        MatchingService matchingService = new MatchingService();
+
+        adoptionService = new AdoptionService(matchingService, shelter, state.applications);
+
+        financialService = new FinancialService(
+                shelter,
+                userService,
+                state.expenses,
+                state.donations,
+                state.balance
+        );
+
+        if (userService.getAllUsers().isEmpty()) {
+            userService.addUser(new Admin(1, "System", "Admin", "admin", "admin", "admin@shelter.com"));
+        }
+    }
+
+    private static void saveSystemData() {
+        ShelterState stateToSave = new ShelterState(
+                shelter.getDogs(),
+                userService.getAllUsers(),
+                financialService.getAllExpenses(),
+                financialService.getAllDonations(),
+                adoptionService.getAllApplications(),
+                financialService.getBalance()
+        );
+
+        fileHandler.save(stateToSave, FILE_PATH);
     }
 
     private static void handleLogin() {
@@ -79,6 +126,7 @@ public class Main {
     private static void handleAddNewUser() {
         try {
             System.out.println("\n--- REGISTER NEW USER ---");
+
             int nextId = userService.getAllUsers().stream()
                     .mapToInt(User::getId)
                     .max()
@@ -106,15 +154,5 @@ public class Main {
         } catch (Exception e) {
             System.out.println("Registration failed: " + e.getMessage());
         }
-    }
-
-    private static void initializeServices() {
-        userService = new UserService();
-        shelter = new Shelter();
-        financialService = new FinancialService(shelter, userService);
-        MatchingService matchingService = new MatchingService();
-        adoptionService = new AdoptionService(matchingService, shelter);
-
-        userService.addUser(new Admin(1, "System", "Admin", "admin", "admin", "admin@shelter.com"));
     }
 }

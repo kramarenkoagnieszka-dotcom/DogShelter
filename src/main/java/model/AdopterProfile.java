@@ -1,18 +1,18 @@
 package model;
 
 public class AdopterProfile {
-    private final int energyLevel;
-    private final boolean hasGarden;
-    private final boolean hasCats;
-    private final boolean hasDogs;
-    private final boolean hasKids;
+    private int energyLevel;
+    private boolean hasGarden;
+    private boolean hasCats;
+    private boolean hasDogs;
+    private boolean hasKids;
 
-    private final double monthlyBudget;
-    private final boolean willingForDisabledDog;
+    private double monthlyBudget;
+    private boolean willingForDisabledDog;
 
-    private final boolean hadDogBefore;
-    private final boolean hasBehavioralKnowledge;
-    private final boolean willingForBehavioralIssues;
+    private boolean hadDogBefore;
+    private boolean hasBehavioralKnowledge;
+    private boolean willingForBehavioralIssues;
 
     public AdopterProfile(int energyLevel, boolean hasGarden, boolean hasCats,
                           boolean hasDogs, boolean hasKids, double monthlyBudget,
@@ -29,6 +29,7 @@ public class AdopterProfile {
         this.hasBehavioralKnowledge = hasBehavioralKnowledge;
         this.willingForBehavioralIssues = willingForBehavioralIssues;
     }
+    private AdopterProfile(){}
     @Override
     public String toString() {
         return String.format(

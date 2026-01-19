@@ -9,6 +9,7 @@ public class Donor extends User {
         super(id, firstName, lastName, username, password, email);
         this.donationHistory = new ArrayList<>();
     }
+    private Donor(){}
     public void addDonation(Donation donation) {
         this.donationHistory.add(donation);
     }

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Adopter extends User {
     private AdopterProfile profile;
-    private final List<Donation> donationHistory;
+    private List<Donation> donationHistory;
 
     public Adopter(int id, String firstName, String lastName, String username, String password, String email) {
         super(id, firstName, lastName, username, password, email);
@@ -18,6 +18,7 @@ public class Adopter extends User {
         this.profile = profile;
         this.donationHistory = new ArrayList<>();
     }
+    private Adopter(){}
 
     public AdopterProfile getProfile() { return profile; }
     public List<Donation> getDonationHistory() { return donationHistory; }

@@ -10,16 +10,31 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class FinancialService {
-    private List<Expense> expenses = new ArrayList<>();
-    private List<Donation> donations = new ArrayList<>();
-    private double balance = 0;
+    private List<Expense> expenses;
+    private List<Donation> donations;
+    private double balance;
+
     private final Shelter shelter;
     private final UserService userService;
+
 
     public FinancialService(Shelter shelter, UserService userService) {
         this.shelter = shelter;
         this.userService = userService;
+        this.expenses = new ArrayList<>();
+        this.donations = new ArrayList<>();
+        this.balance = 0;
     }
+
+    public FinancialService(Shelter shelter, UserService userService,
+                            List<Expense> expenses, List<Donation> donations, double balance) {
+        this.shelter = shelter;
+        this.userService = userService;
+        this.expenses = (expenses != null) ? expenses : new ArrayList<>();
+        this.donations = (donations != null) ? donations : new ArrayList<>();
+        this.balance = balance;
+    }
+
 
     public void registerExpense(Staff staff, int dogId, double amount, String description) {
         shelter.findDogById(dogId)
@@ -44,12 +59,6 @@ public class FinancialService {
         Donation newDonation = new Donation(nextId, amount, today, donor.getId());
 
         addDonation(newDonation);
-    }
-
-    public double calculateTotalDonatedBy(Donor donor) {
-        return donor.getDonationHistory().stream()
-                .mapToDouble(Donation::getAmount)
-                .sum();
     }
 
     public void addExpense(Expense expense) {
@@ -89,6 +98,12 @@ public class FinancialService {
 
     public List<Donation> getAllDonations() {
         return new ArrayList<>(donations);
+    }
+
+    public double calculateTotalDonatedBy(Donor donor) {
+        return donor.getDonationHistory().stream()
+                .mapToDouble(Donation::getAmount)
+                .sum();
     }
 
     public List<Expense> getExpensesByStaff(int staffId) {

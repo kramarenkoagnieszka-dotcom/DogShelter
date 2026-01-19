@@ -6,7 +6,16 @@ import java.util.List;
 import java.util.Optional;
 
 public class UserService {
-    private List<User> users = new ArrayList<>();
+
+    private List<User> users;
+
+    public UserService() {
+        this.users = new ArrayList<>();
+    }
+
+    public UserService(List<User> loadedUsers) {
+        this.users = (loadedUsers != null) ? loadedUsers : new ArrayList<>();
+    }
 
     public void createAndAddUser(String roleChoice, String firstName, String lastName,
                                  String username, String password, String email) {
@@ -69,7 +78,11 @@ public class UserService {
         return users.stream().anyMatch(u -> u instanceof Admin);
     }
 
-    public List<User> getAllUsers() {
+    public List<User> getUsers() {
         return new ArrayList<>(users);
+    }
+
+    public List<User> getAllUsers() {
+        return getUsers();
     }
 }

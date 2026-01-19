@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class FinancialServiceTest {
+public class FinancialServiceTest {
 
     private FinancialService financialService;
     private Shelter shelter;
