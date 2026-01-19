@@ -1,441 +1,576 @@
 {
-  "dogs": [
-    {
-      "id": 1,
-      "name": "Kasia",
-      "age": 5,
-      "breed": "Kundelek",
-      "isAdopted": false,
-      "profile": {
-        "energyLevel": 3,
-        "needsGarden": true,
-        "goodWithCats": false,
-        "goodWithDogs": true,
-        "goodWithKids": true,
-        "specialMedicalNeeds": true,
-        "specialBehavioralNeeds": false
-      },
-      "expenseList": [],
-      "expenses": [],
-      "adopted": false
+  "dogs" : [ {
+    "id" : 1,
+    "name" : "Kasia",
+    "age" : 5,
+    "breed" : "Kundelek",
+    "isAdopted" : false,
+    "profile" : {
+      "energyLevel" : 3,
+      "needsGarden" : true,
+      "goodWithCats" : false,
+      "goodWithDogs" : true,
+      "goodWithKids" : true,
+      "specialMedicalNeeds" : true,
+      "specialBehavioralNeeds" : false
     },
-    {
-      "id": 2,
-      "name": "Maniek",
-      "age": 2,
-      "breed": "Boxer",
-      "isAdopted": false,
-      "profile": {
-        "energyLevel": 4,
-        "needsGarden": true,
-        "goodWithCats": false,
-        "goodWithDogs": true,
-        "goodWithKids": true,
-        "specialMedicalNeeds": false,
-        "specialBehavioralNeeds": false
-      },
-      "expenseList": [],
-      "expenses": [],
-      "adopted": false
+    "expenseList" : [ ],
+    "adopted" : false,
+    "expenses" : [ ]
+  }, {
+    "id" : 2,
+    "name" : "Maniek",
+    "age" : 2,
+    "breed" : "Boxer",
+    "isAdopted" : false,
+    "profile" : {
+      "energyLevel" : 4,
+      "needsGarden" : true,
+      "goodWithCats" : false,
+      "goodWithDogs" : true,
+      "goodWithKids" : true,
+      "specialMedicalNeeds" : false,
+      "specialBehavioralNeeds" : false
     },
-    {
-      "id": 3,
-      "name": "Kurka",
-      "age": 7,
-      "breed": "Pudel",
-      "isAdopted": false,
-      "profile": {
-        "energyLevel": 2,
-        "needsGarden": false,
-        "goodWithCats": true,
-        "goodWithDogs": true,
-        "goodWithKids": false,
-        "specialMedicalNeeds": true,
-        "specialBehavioralNeeds": false
-      },
-      "expenseList": [],
-      "expenses": [],
-      "adopted": false
+    "expenseList" : [ ],
+    "adopted" : false,
+    "expenses" : [ ]
+  }, {
+    "id" : 3,
+    "name" : "Kurka",
+    "age" : 7,
+    "breed" : "Pudel",
+    "isAdopted" : false,
+    "profile" : {
+      "energyLevel" : 2,
+      "needsGarden" : false,
+      "goodWithCats" : true,
+      "goodWithDogs" : true,
+      "goodWithKids" : false,
+      "specialMedicalNeeds" : true,
+      "specialBehavioralNeeds" : false
     },
-    {
-      "id": 4,
-      "name": "Luna",
-      "age": 1,
-      "breed": "Border Collie",
-      "isAdopted": false,
-      "profile": {
-        "energyLevel": 5,
-        "needsGarden": true,
-        "goodWithCats": true,
-        "goodWithDogs": true,
-        "goodWithKids": true,
-        "specialMedicalNeeds": false,
-        "specialBehavioralNeeds": false
-      },
-      "expenseList": [],
-      "expenses": [],
-      "adopted": false
+    "expenseList" : [ {
+      "transactionType" : "expense",
+      "id" : 5003,
+      "amount" : 30.0,
+      "date" : "2026-01-19",
+      "description" : "annual vaccination and checkup",
+      "dogId" : 3,
+      "staffId" : 2
+    } ],
+    "adopted" : false,
+    "expenses" : [ {
+      "transactionType" : "expense",
+      "id" : 5003,
+      "amount" : 30.0,
+      "date" : "2026-01-19",
+      "description" : "annual vaccination and checkup",
+      "dogId" : 3,
+      "staffId" : 2
+    } ]
+  }, {
+    "id" : 4,
+    "name" : "Luna",
+    "age" : 1,
+    "breed" : "Border Collie",
+    "isAdopted" : false,
+    "profile" : {
+      "energyLevel" : 5,
+      "needsGarden" : true,
+      "goodWithCats" : true,
+      "goodWithDogs" : true,
+      "goodWithKids" : true,
+      "specialMedicalNeeds" : false,
+      "specialBehavioralNeeds" : false
     },
-    {
-      "id": 5,
-      "name": "Ciapek",
-      "age": 12,
-      "breed": "Mieszaniec",
-      "isAdopted": false,
-      "profile": {
-        "energyLevel": 1,
-        "needsGarden": false,
-        "goodWithCats": true,
-        "goodWithDogs": true,
-        "goodWithKids": true,
-        "specialMedicalNeeds": true,
-        "specialBehavioralNeeds": false
-      },
-      "expenseList": [],
-      "expenses": [],
-      "adopted": false
+    "expenseList" : [ {
+      "transactionType" : "expense",
+      "id" : 5000,
+      "amount" : 50.0,
+      "date" : "2026-01-19",
+      "description" : "Dry food, 10 kg bag",
+      "dogId" : 4,
+      "staffId" : 2
+    } ],
+    "adopted" : false,
+    "expenses" : [ {
+      "transactionType" : "expense",
+      "id" : 5000,
+      "amount" : 50.0,
+      "date" : "2026-01-19",
+      "description" : "Dry food, 10 kg bag",
+      "dogId" : 4,
+      "staffId" : 2
+    } ]
+  }, {
+    "id" : 5,
+    "name" : "Ciapek",
+    "age" : 12,
+    "breed" : "Mieszaniec",
+    "isAdopted" : false,
+    "profile" : {
+      "energyLevel" : 1,
+      "needsGarden" : false,
+      "goodWithCats" : true,
+      "goodWithDogs" : true,
+      "goodWithKids" : true,
+      "specialMedicalNeeds" : true,
+      "specialBehavioralNeeds" : false
     },
-    {
-      "id": 6,
-      "name": "Rex",
-      "age": 4,
-      "breed": "Owczarek Niemiecki",
-      "isAdopted": false,
-      "profile": {
-        "energyLevel": 4,
-        "needsGarden": true,
-        "goodWithCats": false,
-        "goodWithDogs": false,
-        "goodWithKids": false,
-        "specialMedicalNeeds": false,
-        "specialBehavioralNeeds": true
-      },
-      "expenseList": [],
-      "expenses": [],
-      "adopted": false
+    "expenseList" : [ {
+      "transactionType" : "expense",
+      "id" : 5004,
+      "amount" : 49.0,
+      "date" : "2026-01-19",
+      "description" : "Dog food low calorie",
+      "dogId" : 5,
+      "staffId" : 2
+    } ],
+    "adopted" : false,
+    "expenses" : [ {
+      "transactionType" : "expense",
+      "id" : 5004,
+      "amount" : 49.0,
+      "date" : "2026-01-19",
+      "description" : "Dog food low calorie",
+      "dogId" : 5,
+      "staffId" : 2
+    } ]
+  }, {
+    "id" : 6,
+    "name" : "Rex",
+    "age" : 4,
+    "breed" : "Owczarek Niemiecki",
+    "isAdopted" : false,
+    "profile" : {
+      "energyLevel" : 4,
+      "needsGarden" : true,
+      "goodWithCats" : false,
+      "goodWithDogs" : false,
+      "goodWithKids" : false,
+      "specialMedicalNeeds" : false,
+      "specialBehavioralNeeds" : true
     },
-    {
-      "id": 7,
-      "name": "Bella",
-      "age": 3,
-      "breed": "Golden Retriever",
-      "isAdopted": false,
-      "profile": {
-        "energyLevel": 3,
-        "needsGarden": false,
-        "goodWithCats": true,
-        "goodWithDogs": true,
-        "goodWithKids": true,
-        "specialMedicalNeeds": false,
-        "specialBehavioralNeeds": false
-      },
-      "expenseList": [],
-      "expenses": [],
-      "adopted": false
+    "expenseList" : [ ],
+    "adopted" : false,
+    "expenses" : [ ]
+  }, {
+    "id" : 7,
+    "name" : "Bella",
+    "age" : 3,
+    "breed" : "Golden Retriever",
+    "isAdopted" : false,
+    "profile" : {
+      "energyLevel" : 3,
+      "needsGarden" : false,
+      "goodWithCats" : true,
+      "goodWithDogs" : true,
+      "goodWithKids" : true,
+      "specialMedicalNeeds" : false,
+      "specialBehavioralNeeds" : false
     },
-    {
-      "id": 8,
-      "name": "Azor",
-      "age": 2,
-      "breed": "Terier",
-      "isAdopted": false,
-      "profile": {
-        "energyLevel": 5,
-        "needsGarden": true,
-        "goodWithCats": false,
-        "goodWithDogs": false,
-        "goodWithKids": false,
-        "specialMedicalNeeds": false,
-        "specialBehavioralNeeds": false
-      },
-      "expenseList": [],
-      "expenses": [],
-      "adopted": false
+    "expenseList" : [ ],
+    "adopted" : false,
+    "expenses" : [ ]
+  }, {
+    "id" : 8,
+    "name" : "Azor",
+    "age" : 2,
+    "breed" : "Terier",
+    "isAdopted" : false,
+    "profile" : {
+      "energyLevel" : 5,
+      "needsGarden" : true,
+      "goodWithCats" : false,
+      "goodWithDogs" : false,
+      "goodWithKids" : false,
+      "specialMedicalNeeds" : false,
+      "specialBehavioralNeeds" : false
     },
-    {
-      "id": 9,
-      "name": "Max",
-      "age": 6,
-      "breed": "Beagle",
-      "isAdopted": false,
-      "profile": {
-        "energyLevel": 4,
-        "needsGarden": false,
-        "goodWithCats": true,
-        "goodWithDogs": true,
-        "goodWithKids": true,
-        "specialMedicalNeeds": false,
-        "specialBehavioralNeeds": false
-      },
-      "expenseList": [],
-      "expenses": [],
-      "adopted": false
+    "expenseList" : [ ],
+    "adopted" : false,
+    "expenses" : [ ]
+  }, {
+    "id" : 9,
+    "name" : "Max",
+    "age" : 6,
+    "breed" : "Beagle",
+    "isAdopted" : false,
+    "profile" : {
+      "energyLevel" : 4,
+      "needsGarden" : false,
+      "goodWithCats" : true,
+      "goodWithDogs" : true,
+      "goodWithKids" : true,
+      "specialMedicalNeeds" : false,
+      "specialBehavioralNeeds" : false
     },
-    {
-      "id": 10,
-      "name": "Saba",
-      "age": 10,
-      "breed": "Owczarek Podhalański",
-      "isAdopted": false,
-      "profile": {
-        "energyLevel": 2,
-        "needsGarden": true,
-        "goodWithCats": false,
-        "goodWithDogs": true,
-        "goodWithKids": true,
-        "specialMedicalNeeds": true,
-        "specialBehavioralNeeds": false
-      },
-      "expenseList": [],
-      "expenses": [],
-      "adopted": false
+    "expenseList" : [ ],
+    "adopted" : false,
+    "expenses" : [ ]
+  }, {
+    "id" : 10,
+    "name" : "Saba",
+    "age" : 10,
+    "breed" : "Owczarek Podhalański",
+    "isAdopted" : false,
+    "profile" : {
+      "energyLevel" : 2,
+      "needsGarden" : true,
+      "goodWithCats" : false,
+      "goodWithDogs" : true,
+      "goodWithKids" : true,
+      "specialMedicalNeeds" : true,
+      "specialBehavioralNeeds" : false
     },
-    {
-      "id": 11,
-      "name": "Tofik",
-      "age": 2,
-      "breed": "Jack Russell Terrier",
-      "isAdopted": false,
-      "profile": {
-        "energyLevel": 5,
-        "needsGarden": false,
-        "goodWithCats": false,
-        "goodWithDogs": false,
-        "goodWithKids": true,
-        "specialMedicalNeeds": false,
-        "specialBehavioralNeeds": true
-      },
-      "expenseList": [],
-      "expenses": [],
-      "adopted": false
+    "expenseList" : [ ],
+    "adopted" : false,
+    "expenses" : [ ]
+  }, {
+    "id" : 11,
+    "name" : "Tofik",
+    "age" : 2,
+    "breed" : "Jack Russell Terrier",
+    "isAdopted" : false,
+    "profile" : {
+      "energyLevel" : 5,
+      "needsGarden" : false,
+      "goodWithCats" : false,
+      "goodWithDogs" : false,
+      "goodWithKids" : true,
+      "specialMedicalNeeds" : false,
+      "specialBehavioralNeeds" : true
     },
-    {
-      "id": 12,
-      "name": "Dora",
-      "age": 1,
-      "breed": "Whippet",
-      "isAdopted": false,
-      "profile": {
-        "energyLevel": 4,
-        "needsGarden": false,
-        "goodWithCats": true,
-        "goodWithDogs": true,
-        "goodWithKids": true,
-        "specialMedicalNeeds": false,
-        "specialBehavioralNeeds": false
-      },
-      "expenseList": [],
-      "expenses": [],
-      "adopted": false
+    "expenseList" : [ ],
+    "adopted" : false,
+    "expenses" : [ ]
+  }, {
+    "id" : 12,
+    "name" : "Dora",
+    "age" : 1,
+    "breed" : "Whippet",
+    "isAdopted" : false,
+    "profile" : {
+      "energyLevel" : 4,
+      "needsGarden" : false,
+      "goodWithCats" : true,
+      "goodWithDogs" : true,
+      "goodWithKids" : true,
+      "specialMedicalNeeds" : false,
+      "specialBehavioralNeeds" : false
     },
-    {
-      "id": 13,
-      "name": "Borys",
-      "age": 5,
-      "breed": "Rottweiler",
-      "isAdopted": false,
-      "profile": {
-        "energyLevel": 3,
-        "needsGarden": true,
-        "goodWithCats": false,
-        "goodWithDogs": false,
-        "goodWithKids": false,
-        "specialMedicalNeeds": false,
-        "specialBehavioralNeeds": true
-      },
-      "expenseList": [],
-      "expenses": [],
-      "adopted": false
+    "expenseList" : [ ],
+    "adopted" : false,
+    "expenses" : [ ]
+  }, {
+    "id" : 13,
+    "name" : "Borys",
+    "age" : 5,
+    "breed" : "Rottweiler",
+    "isAdopted" : false,
+    "profile" : {
+      "energyLevel" : 3,
+      "needsGarden" : true,
+      "goodWithCats" : false,
+      "goodWithDogs" : false,
+      "goodWithKids" : false,
+      "specialMedicalNeeds" : false,
+      "specialBehavioralNeeds" : true
     },
-    {
-      "id": 14,
-      "name": "Misia",
-      "age": 14,
-      "breed": "Yorkshire Terrier",
-      "isAdopted": false,
-      "profile": {
-        "energyLevel": 1,
-        "needsGarden": false,
-        "goodWithCats": true,
-        "goodWithDogs": true,
-        "goodWithKids": true,
-        "specialMedicalNeeds": true,
-        "specialBehavioralNeeds": false
-      },
-      "expenseList": [],
-      "expenses": [],
-      "adopted": false
+    "expenseList" : [ ],
+    "adopted" : false,
+    "expenses" : [ ]
+  }, {
+    "id" : 14,
+    "name" : "Misia",
+    "age" : 14,
+    "breed" : "Yorkshire Terrier",
+    "isAdopted" : false,
+    "profile" : {
+      "energyLevel" : 1,
+      "needsGarden" : false,
+      "goodWithCats" : true,
+      "goodWithDogs" : true,
+      "goodWithKids" : true,
+      "specialMedicalNeeds" : true,
+      "specialBehavioralNeeds" : false
     },
-    {
-      "id": 15,
-      "name": "Reksio",
-      "age": 3,
-      "breed": "Dalmatyńczyk",
-      "isAdopted": false,
-      "profile": {
-        "energyLevel": 5,
-        "needsGarden": true,
-        "goodWithCats": true,
-        "goodWithDogs": true,
-        "goodWithKids": true,
-        "specialMedicalNeeds": false,
-        "specialBehavioralNeeds": false
-      },
-      "expenseList": [],
-      "expenses": [],
-      "adopted": false
+    "expenseList" : [ ],
+    "adopted" : false,
+    "expenses" : [ ]
+  }, {
+    "id" : 15,
+    "name" : "Reksio",
+    "age" : 3,
+    "breed" : "Dalmatyńczyk",
+    "isAdopted" : false,
+    "profile" : {
+      "energyLevel" : 5,
+      "needsGarden" : true,
+      "goodWithCats" : true,
+      "goodWithDogs" : true,
+      "goodWithKids" : true,
+      "specialMedicalNeeds" : false,
+      "specialBehavioralNeeds" : false
     },
-    {
-      "id": 16,
-      "name": "Fibi",
-      "age": 4,
-      "breed": "Mops",
-      "isAdopted": false,
-      "profile": {
-        "energyLevel": 2,
-        "needsGarden": false,
-        "goodWithCats": true,
-        "goodWithDogs": true,
-        "goodWithKids": true,
-        "specialMedicalNeeds": true,
-        "specialBehavioralNeeds": false
-      },
-      "expenseList": [],
-      "expenses": [],
-      "adopted": false
+    "expenseList" : [ ],
+    "adopted" : false,
+    "expenses" : [ ]
+  }, {
+    "id" : 16,
+    "name" : "Fibi",
+    "age" : 4,
+    "breed" : "Mops",
+    "isAdopted" : false,
+    "profile" : {
+      "energyLevel" : 2,
+      "needsGarden" : false,
+      "goodWithCats" : true,
+      "goodWithDogs" : true,
+      "goodWithKids" : true,
+      "specialMedicalNeeds" : true,
+      "specialBehavioralNeeds" : false
     },
-    {
-      "id": 17,
-      "name": "Hektor",
-      "age": 8,
-      "breed": "Doberman",
-      "isAdopted": false,
-      "profile": {
-        "energyLevel": 3,
-        "needsGarden": true,
-        "goodWithCats": false,
-        "goodWithDogs": true,
-        "goodWithKids": false,
-        "specialMedicalNeeds": false,
-        "specialBehavioralNeeds": true
-      },
-      "expenseList": [],
-      "expenses": [],
-      "adopted": false
+    "expenseList" : [ {
+      "transactionType" : "expense",
+      "id" : 5002,
+      "amount" : 1500.0,
+      "date" : "2026-01-19",
+      "description" : "Custom dog wheelchair",
+      "dogId" : 16,
+      "staffId" : 2
+    } ],
+    "adopted" : false,
+    "expenses" : [ {
+      "transactionType" : "expense",
+      "id" : 5002,
+      "amount" : 1500.0,
+      "date" : "2026-01-19",
+      "description" : "Custom dog wheelchair",
+      "dogId" : 16,
+      "staffId" : 2
+    } ]
+  }, {
+    "id" : 17,
+    "name" : "Hektor",
+    "age" : 8,
+    "breed" : "Doberman",
+    "isAdopted" : false,
+    "profile" : {
+      "energyLevel" : 3,
+      "needsGarden" : true,
+      "goodWithCats" : false,
+      "goodWithDogs" : true,
+      "goodWithKids" : false,
+      "specialMedicalNeeds" : false,
+      "specialBehavioralNeeds" : true
     },
-    {
-      "id": 18,
-      "name": "Zuzia",
-      "age": 2,
-      "breed": "Cocker Spaniel",
-      "isAdopted": false,
-      "profile": {
-        "energyLevel": 4,
-        "needsGarden": false,
-        "goodWithCats": true,
-        "goodWithDogs": true,
-        "goodWithKids": true,
-        "specialMedicalNeeds": false,
-        "specialBehavioralNeeds": false
-      },
-      "expenseList": [],
-      "expenses": [],
-      "adopted": false
-    }
-  ],
-  "users": [
-    {
-      "type": "admin",
-      "id": 1,
-      "username": "admin",
-      "firstName": "System",
-      "lastName": "Admin",
-      "password": "admin",
-      "email": "admin@shelter.com"
+    "expenseList" : [ {
+      "transactionType" : "expense",
+      "id" : 5001,
+      "amount" : 200.0,
+      "date" : "2026-01-19",
+      "description" : "5h of behavioral training",
+      "dogId" : 17,
+      "staffId" : 2
+    } ],
+    "adopted" : false,
+    "expenses" : [ {
+      "transactionType" : "expense",
+      "id" : 5001,
+      "amount" : 200.0,
+      "date" : "2026-01-19",
+      "description" : "5h of behavioral training",
+      "dogId" : 17,
+      "staffId" : 2
+    } ]
+  }, {
+    "id" : 18,
+    "name" : "Zuzia",
+    "age" : 2,
+    "breed" : "Cocker Spaniel",
+    "isAdopted" : false,
+    "profile" : {
+      "energyLevel" : 4,
+      "needsGarden" : false,
+      "goodWithCats" : true,
+      "goodWithDogs" : true,
+      "goodWithKids" : true,
+      "specialMedicalNeeds" : false,
+      "specialBehavioralNeeds" : false
     },
-    {
-      "type": "staff",
-      "id": 2,
-      "username": "Mykmyk",
-      "firstName": "Mykhailo",
-      "lastName": "Kramarenko",
-      "password": "1234",
-      "email": "myk@gmail.com"
+    "expenseList" : [ ],
+    "adopted" : false,
+    "expenses" : [ ]
+  }, {
+    "id" : 19,
+    "name" : "Jogurt",
+    "age" : 6,
+    "breed" : "Maltese",
+    "isAdopted" : false,
+    "profile" : {
+      "energyLevel" : 2,
+      "needsGarden" : false,
+      "goodWithCats" : true,
+      "goodWithDogs" : true,
+      "goodWithKids" : true,
+      "specialMedicalNeeds" : false,
+      "specialBehavioralNeeds" : false
     },
-    {
-      "type": "adopter",
-      "id": 3,
-      "username": "justiko",
-      "firstName": "Justyna",
-      "lastName": "Kowalska",
-      "password": "1234",
-      "email": "justiko@gmail.com",
-      "profile": {
-        "energyLevel": 3,
-        "hasGarden": true,
-        "hasCats": false,
-        "hasDogs": false,
-        "hasKids": true,
-        "monthlyBudget": 200.0,
-        "willingForDisabledDog": false,
-        "hadDogBefore": true,
-        "hasBehavioralKnowledge": true,
-        "willingForBehavioralIssues": true
+    "expenseList" : [ ],
+    "adopted" : false,
+    "expenses" : [ ]
+  } ],
+  "users" : [ {
+    "type" : "admin",
+    "id" : 1,
+    "username" : "admin",
+    "firstName" : "System",
+    "lastName" : "Admin",
+    "password" : "admin",
+    "email" : "admin@shelter.com"
+  }, {
+    "type" : "staff",
+    "id" : 2,
+    "username" : "Mykmyk",
+    "firstName" : "Mykhailo",
+    "lastName" : "Kramarenko",
+    "password" : "1234",
+    "email" : "myk@gmail.com"
+  }, {
+    "type" : "adopter",
+    "id" : 3,
+    "username" : "justiko",
+    "firstName" : "Justyna",
+    "lastName" : "Kowalska",
+    "password" : "1234",
+    "email" : "justiko@gmail.com",
+    "profile" : {
+      "energyLevel" : 3,
+      "hasGarden" : true,
+      "hasCats" : false,
+      "hasDogs" : false,
+      "hasKids" : true,
+      "monthlyBudget" : 200.0,
+      "willingForDisabledDog" : false,
+      "hadDogBefore" : true,
+      "hasBehavioralKnowledge" : true,
+      "willingForBehavioralIssues" : true
+    },
+    "donationHistory" : [ ]
+  }, {
+    "type" : "donor",
+    "id" : 4,
+    "username" : "anonymusdonor",
+    "firstName" : "Anonymus",
+    "lastName" : "Donor",
+    "password" : "1234",
+    "email" : "anonymus.donor@gmail.com",
+    "donationHistory" : [ {
+      "transactionType" : "donation",
+      "id" : 8000,
+      "amount" : 50000.0,
+      "date" : "2026-01-19",
+      "donorId" : 4
+    } ]
+  } ],
+  "expenses" : [ {
+    "transactionType" : "expense",
+    "id" : 5000,
+    "amount" : 50.0,
+    "date" : "2026-01-19",
+    "description" : "Dry food, 10 kg bag",
+    "dogId" : 4,
+    "staffId" : 2
+  }, {
+    "transactionType" : "expense",
+    "id" : 5001,
+    "amount" : 200.0,
+    "date" : "2026-01-19",
+    "description" : "5h of behavioral training",
+    "dogId" : 17,
+    "staffId" : 2
+  }, {
+    "transactionType" : "expense",
+    "id" : 5002,
+    "amount" : 1500.0,
+    "date" : "2026-01-19",
+    "description" : "Custom dog wheelchair",
+    "dogId" : 16,
+    "staffId" : 2
+  }, {
+    "transactionType" : "expense",
+    "id" : 5003,
+    "amount" : 30.0,
+    "date" : "2026-01-19",
+    "description" : "annual vaccination and checkup",
+    "dogId" : 3,
+    "staffId" : 2
+  }, {
+    "transactionType" : "expense",
+    "id" : 5004,
+    "amount" : 49.0,
+    "date" : "2026-01-19",
+    "description" : "Dog food low calorie",
+    "dogId" : 5,
+    "staffId" : 2
+  } ],
+  "donations" : [ {
+    "transactionType" : "donation",
+    "id" : 8000,
+    "amount" : 50000.0,
+    "date" : "2026-01-19",
+    "donorId" : 4
+  } ],
+  "applications" : [ {
+    "id" : 2000,
+    "dog" : {
+      "id" : 2,
+      "name" : "Maniek",
+      "age" : 2,
+      "breed" : "Boxer",
+      "isAdopted" : false,
+      "profile" : {
+        "energyLevel" : 4,
+        "needsGarden" : true,
+        "goodWithCats" : false,
+        "goodWithDogs" : true,
+        "goodWithKids" : true,
+        "specialMedicalNeeds" : false,
+        "specialBehavioralNeeds" : false
       },
-      "donationHistory": []
-    }
-  ],
-  "expenses": [],
-  "donations": [],
-  "applications": [
-    {
-      "id": 2000,
-      "dog": {
-        "id": 2,
-        "name": "Maniek",
-        "age": 2,
-        "breed": "Boxer",
-        "isAdopted": false,
-        "profile": {
-          "energyLevel": 4,
-          "needsGarden": true,
-          "goodWithCats": false,
-          "goodWithDogs": true,
-          "goodWithKids": true,
-          "specialMedicalNeeds": false,
-          "specialBehavioralNeeds": false
-        },
-        "expenseList": [],
-        "expenses": [],
-        "adopted": false
+      "expenseList" : [ ],
+      "adopted" : false,
+      "expenses" : [ ]
+    },
+    "adopter" : {
+      "type" : "adopter",
+      "id" : 3,
+      "username" : "justiko",
+      "firstName" : "Justyna",
+      "lastName" : "Kowalska",
+      "password" : "1234",
+      "email" : "justiko@gmail.com",
+      "profile" : {
+        "energyLevel" : 3,
+        "hasGarden" : true,
+        "hasCats" : false,
+        "hasDogs" : false,
+        "hasKids" : true,
+        "monthlyBudget" : 200.0,
+        "willingForDisabledDog" : false,
+        "hadDogBefore" : true,
+        "hasBehavioralKnowledge" : true,
+        "willingForBehavioralIssues" : true
       },
-      "adopter": {
-        "type": "adopter",
-        "id": 3,
-        "username": "justiko",
-        "firstName": "Justyna",
-        "lastName": "Kowalska",
-        "password": "1234",
-        "email": "justiko@gmail.com",
-        "profile": {
-          "energyLevel": 3,
-          "hasGarden": true,
-          "hasCats": false,
-          "hasDogs": false,
-          "hasKids": true,
-          "monthlyBudget": 200.0,
-          "willingForDisabledDog": false,
-          "hadDogBefore": true,
-          "hasBehavioralKnowledge": true,
-          "willingForBehavioralIssues": true
-        },
-        "donationHistory": []
-      },
-      "applicationDate": "2026-01-16T17:00:11.2480276",
-      "status": "PENDING",
-      "matchPercentage": 88.89,
-      "notes": "I love boxers, I will provide him loving family life"
-    }
-  ],
-  "balance": 0.0
+      "donationHistory" : [ ]
+    },
+    "applicationDate" : "2026-01-16T17:00:11.2480276",
+    "status" : "PENDING",
+    "matchPercentage" : 88.89,
+    "notes" : "I love boxers, I will provide him loving family life",
+    "processed" : false
+  } ],
+  "balance" : 48171.0
 }

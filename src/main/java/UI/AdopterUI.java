@@ -76,7 +76,7 @@ public class AdopterUI extends BaseUI {
             boolean dogs = askYesNo("Do you have other dogs?");
             boolean kids = askYesNo("Do you have children?");
 
-            System.out.print("Monthly budget for dog care (PLN): ");
+            System.out.print("Monthly budget for dog care (EUR): ");
             double budget = Double.parseDouble(scanner.nextLine());
 
             boolean disabled = askYesNo("Are you willing to adopt a disabled dog?");

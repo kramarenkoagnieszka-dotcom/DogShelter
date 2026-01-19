@@ -14,4 +14,9 @@ public class Donation extends FinancialTransaction {
     public int getDonorId() {
         return donorId;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Donation: %s - %.2f PLN (donor ID: %s)", this.getDate(), this.getAmount(), this.getDonorId());
+    }
 }

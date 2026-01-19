@@ -18,4 +18,12 @@ public class Expense extends FinancialTransaction {
     public String getDescription() { return description; }
     public int getDogId() { return dogId; }
     public int getStaffId() {return staffId; }
+    @Override
+    public String toString() {
+        return String.format("Expense: [%s] Amount: %.2f PLN | Note: %s | Dog ID: %d",
+                this.getDate(),
+                this.getAmount(),
+                this.getDescription(),
+                this.getDogId());
+    }
 }
