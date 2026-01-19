@@ -58,9 +58,25 @@
       "description" : "annual vaccination and checkup",
       "dogId" : 3,
       "staffId" : 2
+    }, {
+      "transactionType" : "expense",
+      "id" : 5003,
+      "amount" : 30.0,
+      "date" : "2026-01-19",
+      "description" : "annual vaccination and checkup",
+      "dogId" : 3,
+      "staffId" : 2
     } ],
     "adopted" : false,
     "expenses" : [ {
+      "transactionType" : "expense",
+      "id" : 5003,
+      "amount" : 30.0,
+      "date" : "2026-01-19",
+      "description" : "annual vaccination and checkup",
+      "dogId" : 3,
+      "staffId" : 2
+    }, {
       "transactionType" : "expense",
       "id" : 5003,
       "amount" : 30.0,
@@ -92,9 +108,25 @@
       "description" : "Dry food, 10 kg bag",
       "dogId" : 4,
       "staffId" : 2
+    }, {
+      "transactionType" : "expense",
+      "id" : 5000,
+      "amount" : 50.0,
+      "date" : "2026-01-19",
+      "description" : "Dry food, 10 kg bag",
+      "dogId" : 4,
+      "staffId" : 2
     } ],
     "adopted" : false,
     "expenses" : [ {
+      "transactionType" : "expense",
+      "id" : 5000,
+      "amount" : 50.0,
+      "date" : "2026-01-19",
+      "description" : "Dry food, 10 kg bag",
+      "dogId" : 4,
+      "staffId" : 2
+    }, {
       "transactionType" : "expense",
       "id" : 5000,
       "amount" : 50.0,
@@ -126,9 +158,25 @@
       "description" : "Dog food low calorie",
       "dogId" : 5,
       "staffId" : 2
+    }, {
+      "transactionType" : "expense",
+      "id" : 5004,
+      "amount" : 49.0,
+      "date" : "2026-01-19",
+      "description" : "Dog food low calorie",
+      "dogId" : 5,
+      "staffId" : 2
     } ],
     "adopted" : false,
     "expenses" : [ {
+      "transactionType" : "expense",
+      "id" : 5004,
+      "amount" : 49.0,
+      "date" : "2026-01-19",
+      "description" : "Dog food low calorie",
+      "dogId" : 5,
+      "staffId" : 2
+    }, {
       "transactionType" : "expense",
       "id" : 5004,
       "amount" : 49.0,
@@ -340,9 +388,25 @@
       "description" : "Custom dog wheelchair",
       "dogId" : 16,
       "staffId" : 2
+    }, {
+      "transactionType" : "expense",
+      "id" : 5002,
+      "amount" : 1500.0,
+      "date" : "2026-01-19",
+      "description" : "Custom dog wheelchair",
+      "dogId" : 16,
+      "staffId" : 2
     } ],
     "adopted" : false,
     "expenses" : [ {
+      "transactionType" : "expense",
+      "id" : 5002,
+      "amount" : 1500.0,
+      "date" : "2026-01-19",
+      "description" : "Custom dog wheelchair",
+      "dogId" : 16,
+      "staffId" : 2
+    }, {
       "transactionType" : "expense",
       "id" : 5002,
       "amount" : 1500.0,
@@ -374,9 +438,25 @@
       "description" : "5h of behavioral training",
       "dogId" : 17,
       "staffId" : 2
+    }, {
+      "transactionType" : "expense",
+      "id" : 5001,
+      "amount" : 200.0,
+      "date" : "2026-01-19",
+      "description" : "5h of behavioral training",
+      "dogId" : 17,
+      "staffId" : 2
     } ],
     "adopted" : false,
     "expenses" : [ {
+      "transactionType" : "expense",
+      "id" : 5001,
+      "amount" : 200.0,
+      "date" : "2026-01-19",
+      "description" : "5h of behavioral training",
+      "dogId" : 17,
+      "staffId" : 2
+    }, {
       "transactionType" : "expense",
       "id" : 5001,
       "amount" : 200.0,
@@ -434,10 +514,26 @@
     "type" : "staff",
     "id" : 2,
     "username" : "Mykmyk",
-    "firstName" : "Mykhailo",
-    "lastName" : "Kramarenko",
+    "firstName" : "Michal",
+    "lastName" : "Karcznaczyk",
     "password" : "1234",
     "email" : "myk@gmail.com"
+  }, {
+    "type" : "staff",
+    "id" : 201,
+    "username" : "anna_vet",
+    "firstName" : "Anna",
+    "lastName" : "Zielińska",
+    "password" : "staffpass1",
+    "email" : "a.zielinska@shelter.com"
+  }, {
+    "type" : "staff",
+    "id" : 202,
+    "username" : "tomek_trainer",
+    "firstName" : "Tomasz",
+    "lastName" : "Kaczmarek",
+    "password" : "staffpassword2",
+    "email" : "t.kaczmarek@shelter.com"
   }, {
     "type" : "adopter",
     "id" : 3,
@@ -460,6 +556,48 @@
     },
     "donationHistory" : [ ]
   }, {
+    "type" : "adopter",
+    "id" : 301,
+    "username" : "marek_88",
+    "firstName" : "Marek",
+    "lastName" : "Lewandowski",
+    "password" : "userpass1",
+    "email" : "marek88@gmail.com",
+    "profile" : {
+      "energyLevel" : 5,
+      "hasGarden" : true,
+      "hasCats" : true,
+      "hasDogs" : true,
+      "hasKids" : false,
+      "monthlyBudget" : 500.0,
+      "willingForDisabledDog" : true,
+      "hadDogBefore" : true,
+      "hasBehavioralKnowledge" : false,
+      "willingForBehavioralIssues" : false
+    },
+    "donationHistory" : [ ]
+  }, {
+    "type" : "adopter",
+    "id" : 302,
+    "username" : "eliza_w",
+    "firstName" : "Eliza",
+    "lastName" : "Wiśniewska",
+    "password" : "userpass2",
+    "email" : "eliza.w@wp.pl",
+    "profile" : {
+      "energyLevel" : 2,
+      "hasGarden" : false,
+      "hasCats" : true,
+      "hasDogs" : false,
+      "hasKids" : false,
+      "monthlyBudget" : 300.0,
+      "willingForDisabledDog" : false,
+      "hadDogBefore" : false,
+      "hasBehavioralKnowledge" : false,
+      "willingForBehavioralIssues" : false
+    },
+    "donationHistory" : [ ]
+  }, {
     "type" : "donor",
     "id" : 4,
     "username" : "anonymusdonor",
@@ -473,6 +611,60 @@
       "amount" : 50000.0,
       "date" : "2026-01-19",
       "donorId" : 4
+    } ]
+  }, {
+    "type" : "donor",
+    "id" : 401,
+    "username" : "robert_king",
+    "firstName" : "Robert",
+    "lastName" : "Król",
+    "password" : "donorpass1",
+    "email" : "r.krol@biznes.pl",
+    "donationHistory" : [ {
+      "transactionType" : "donation",
+      "id" : 8001,
+      "amount" : 1000.0,
+      "date" : "2026-01-19",
+      "donorId" : 401
+    }, {
+      "transactionType" : "donation",
+      "id" : 8002,
+      "amount" : 1000.0,
+      "date" : "2026-01-19",
+      "donorId" : 401
+    }, {
+      "transactionType" : "donation",
+      "id" : 8003,
+      "amount" : 1000.0,
+      "date" : "2026-01-19",
+      "donorId" : 401
+    } ]
+  }, {
+    "type" : "donor",
+    "id" : 402,
+    "username" : "charity_org",
+    "firstName" : "Fundacja",
+    "lastName" : "Pomoc",
+    "password" : "donorpass2",
+    "email" : "kontakt@fundacja.org",
+    "donationHistory" : [ {
+      "transactionType" : "donation",
+      "id" : 8004,
+      "amount" : 2500.0,
+      "date" : "2026-01-19",
+      "donorId" : 402
+    }, {
+      "transactionType" : "donation",
+      "id" : 8005,
+      "amount" : 2500.0,
+      "date" : "2026-01-19",
+      "donorId" : 402
+    }, {
+      "transactionType" : "donation",
+      "id" : 8006,
+      "amount" : 2500.0,
+      "date" : "2026-01-19",
+      "donorId" : 402
     } ]
   } ],
   "expenses" : [ {
@@ -515,6 +707,86 @@
     "description" : "Dog food low calorie",
     "dogId" : 5,
     "staffId" : 2
+  }, {
+    "transactionType" : "expense",
+    "id" : 5005,
+    "amount" : 120.0,
+    "date" : "2026-01-19",
+    "description" : "Deworming tablets",
+    "dogId" : 1,
+    "staffId" : 201
+  }, {
+    "transactionType" : "expense",
+    "id" : 5006,
+    "amount" : 80.0,
+    "date" : "2026-01-19",
+    "description" : "Leash and collar",
+    "dogId" : 7,
+    "staffId" : 201
+  }, {
+    "transactionType" : "expense",
+    "id" : 5007,
+    "amount" : 300.0,
+    "date" : "2026-01-19",
+    "description" : "Blood tests",
+    "dogId" : 12,
+    "staffId" : 201
+  }, {
+    "transactionType" : "expense",
+    "id" : 5008,
+    "amount" : 45.0,
+    "date" : "2026-01-19",
+    "description" : "Shampoo",
+    "dogId" : 19,
+    "staffId" : 201
+  }, {
+    "transactionType" : "expense",
+    "id" : 5009,
+    "amount" : 200.0,
+    "date" : "2026-01-19",
+    "description" : "Vet consultation",
+    "dogId" : 2,
+    "staffId" : 201
+  }, {
+    "transactionType" : "expense",
+    "id" : 5010,
+    "amount" : 60.0,
+    "date" : "2026-01-19",
+    "description" : "Chew toys",
+    "dogId" : 8,
+    "staffId" : 202
+  }, {
+    "transactionType" : "expense",
+    "id" : 5011,
+    "amount" : 150.0,
+    "date" : "2026-01-19",
+    "description" : "Training treats",
+    "dogId" : 14,
+    "staffId" : 202
+  }, {
+    "transactionType" : "expense",
+    "id" : 5012,
+    "amount" : 90.0,
+    "date" : "2026-01-19",
+    "description" : "Bedding",
+    "dogId" : 11,
+    "staffId" : 202
+  }, {
+    "transactionType" : "expense",
+    "id" : 5013,
+    "amount" : 400.0,
+    "date" : "2026-01-19",
+    "description" : "Behavioral assessment",
+    "dogId" : 6,
+    "staffId" : 202
+  }, {
+    "transactionType" : "expense",
+    "id" : 5014,
+    "amount" : 75.0,
+    "date" : "2026-01-19",
+    "description" : "Winter coat",
+    "dogId" : 15,
+    "staffId" : 202
   } ],
   "donations" : [ {
     "transactionType" : "donation",
@@ -522,6 +794,42 @@
     "amount" : 50000.0,
     "date" : "2026-01-19",
     "donorId" : 4
+  }, {
+    "transactionType" : "donation",
+    "id" : 8001,
+    "amount" : 1000.0,
+    "date" : "2026-01-19",
+    "donorId" : 401
+  }, {
+    "transactionType" : "donation",
+    "id" : 8002,
+    "amount" : 1000.0,
+    "date" : "2026-01-19",
+    "donorId" : 401
+  }, {
+    "transactionType" : "donation",
+    "id" : 8003,
+    "amount" : 1000.0,
+    "date" : "2026-01-19",
+    "donorId" : 401
+  }, {
+    "transactionType" : "donation",
+    "id" : 8004,
+    "amount" : 2500.0,
+    "date" : "2026-01-19",
+    "donorId" : 402
+  }, {
+    "transactionType" : "donation",
+    "id" : 8005,
+    "amount" : 2500.0,
+    "date" : "2026-01-19",
+    "donorId" : 402
+  }, {
+    "transactionType" : "donation",
+    "id" : 8006,
+    "amount" : 2500.0,
+    "date" : "2026-01-19",
+    "donorId" : 402
   } ],
   "applications" : [ {
     "id" : 2000,
@@ -571,6 +879,134 @@
     "matchPercentage" : 88.89,
     "notes" : "I love boxers, I will provide him loving family life",
     "processed" : false
+  }, {
+    "id" : 2001,
+    "dog" : {
+      "id" : 4,
+      "name" : "Luna",
+      "age" : 1,
+      "breed" : "Border Collie",
+      "isAdopted" : false,
+      "profile" : {
+        "energyLevel" : 5,
+        "needsGarden" : true,
+        "goodWithCats" : true,
+        "goodWithDogs" : true,
+        "goodWithKids" : true,
+        "specialMedicalNeeds" : false,
+        "specialBehavioralNeeds" : false
+      },
+      "expenseList" : [ {
+        "transactionType" : "expense",
+        "id" : 5000,
+        "amount" : 50.0,
+        "date" : "2026-01-19",
+        "description" : "Dry food, 10 kg bag",
+        "dogId" : 4,
+        "staffId" : 2
+      }, {
+        "transactionType" : "expense",
+        "id" : 5000,
+        "amount" : 50.0,
+        "date" : "2026-01-19",
+        "description" : "Dry food, 10 kg bag",
+        "dogId" : 4,
+        "staffId" : 2
+      } ],
+      "adopted" : false,
+      "expenses" : [ {
+        "transactionType" : "expense",
+        "id" : 5000,
+        "amount" : 50.0,
+        "date" : "2026-01-19",
+        "description" : "Dry food, 10 kg bag",
+        "dogId" : 4,
+        "staffId" : 2
+      }, {
+        "transactionType" : "expense",
+        "id" : 5000,
+        "amount" : 50.0,
+        "date" : "2026-01-19",
+        "description" : "Dry food, 10 kg bag",
+        "dogId" : 4,
+        "staffId" : 2
+      } ]
+    },
+    "adopter" : {
+      "type" : "adopter",
+      "id" : 301,
+      "username" : "marek_88",
+      "firstName" : "Marek",
+      "lastName" : "Lewandowski",
+      "password" : "userpass1",
+      "email" : "marek88@gmail.com",
+      "profile" : {
+        "energyLevel" : 5,
+        "hasGarden" : true,
+        "hasCats" : true,
+        "hasDogs" : true,
+        "hasKids" : false,
+        "monthlyBudget" : 500.0,
+        "willingForDisabledDog" : true,
+        "hadDogBefore" : true,
+        "hasBehavioralKnowledge" : false,
+        "willingForBehavioralIssues" : false
+      },
+      "donationHistory" : [ ]
+    },
+    "applicationDate" : "2026-01-19T17:07:28.262373",
+    "status" : "PENDING",
+    "matchPercentage" : 94.44,
+    "notes" : "I'm very active person, Luna sounds like a great companion for me! ",
+    "processed" : false
+  }, {
+    "id" : 2002,
+    "dog" : {
+      "id" : 19,
+      "name" : "Jogurt",
+      "age" : 6,
+      "breed" : "Maltese",
+      "isAdopted" : false,
+      "profile" : {
+        "energyLevel" : 2,
+        "needsGarden" : false,
+        "goodWithCats" : true,
+        "goodWithDogs" : true,
+        "goodWithKids" : true,
+        "specialMedicalNeeds" : false,
+        "specialBehavioralNeeds" : false
+      },
+      "expenseList" : [ ],
+      "adopted" : false,
+      "expenses" : [ ]
+    },
+    "adopter" : {
+      "type" : "adopter",
+      "id" : 302,
+      "username" : "eliza_w",
+      "firstName" : "Eliza",
+      "lastName" : "Wiśniewska",
+      "password" : "userpass2",
+      "email" : "eliza.w@wp.pl",
+      "profile" : {
+        "energyLevel" : 2,
+        "hasGarden" : false,
+        "hasCats" : true,
+        "hasDogs" : false,
+        "hasKids" : false,
+        "monthlyBudget" : 300.0,
+        "willingForDisabledDog" : false,
+        "hadDogBefore" : false,
+        "hasBehavioralKnowledge" : false,
+        "willingForBehavioralIssues" : false
+      },
+      "donationHistory" : [ ]
+    },
+    "applicationDate" : "2026-01-19T17:10:24.5059645",
+    "status" : "PENDING",
+    "matchPercentage" : 83.33,
+    "notes" : "I want to give loving home and lots of snuggles to this girl. She will have great life with me.",
+    "processed" : false
   } ],
-  "balance" : 48171.0
+  "balance" : 57151.0
 }
