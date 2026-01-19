@@ -16,7 +16,6 @@ public class Main {
     private static FinancialService financialService;
 
     public static void main(String[] args) {
-        // Inicjalizacja i wczytanie danych z pliku
         initializeServices();
 
         System.out.println("Welcome to Shelter Management System");

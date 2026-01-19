@@ -59,7 +59,7 @@ public class AdopterUI extends BaseUI {
             var rankedDogs = adoptionService.getRankedDogsForAdopter(adopter, allDogs);
 
             for (AdoptionService.DogMatchResult result : rankedDogs) {
-                System.out.printf("[%3.0f%% Match] %s\n", result.percentage(), result.dog());
+                System.out.printf("%3.0f%% Match\n%s\n\n", result.percentage(), result.dog());
             }
         }
     }

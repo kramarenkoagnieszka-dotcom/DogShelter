@@ -6,7 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="e8a9a1d5-74e8-45a5-aadc-e4721789e2cd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/AdoptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/AdoptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UI/AdopterUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI/AdopterUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/UI/AdopterUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/UI/AdopterUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/AdoptionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/AdoptionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/Shelter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/Shelter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
